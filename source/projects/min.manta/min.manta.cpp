@@ -22,7 +22,6 @@ public:
     MIN_AUTHOR		{ "Jeff Snyder" };
     MIN_RELATED		{ "hi" };
     Manta myManta;
-
     manta(const atoms& args = {})
     {
 

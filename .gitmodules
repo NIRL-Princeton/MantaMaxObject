@@ -4,3 +4,6 @@
 [submodule "source/min-lib"]
 	path = source/min-lib
 	url = https://github.com/Cycling74/min-lib.git
+[submodule "source/projects/min.manta/hidapi"]
+	path = source/projects/min.manta/hidapi
+	url = git@github.com:libusb/hidapi.git
