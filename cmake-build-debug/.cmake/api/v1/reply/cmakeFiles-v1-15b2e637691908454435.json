@@ -169,6 +169,9 @@
 			"path" : "cmake-build-debug/CMakeFiles/git-data/grabRef.cmake"
 		},
 		{
+			"path" : ".git/refs/heads/main"
+		},
+		{
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindGit.cmake"
@@ -192,6 +195,9 @@
 		{
 			"isGenerated" : true,
 			"path" : "cmake-build-debug/CMakeFiles/git-data/grabRef.cmake"
+		},
+		{
+			"path" : ".git/refs/heads/main"
 		},
 		{
 			"path" : "package-info.json.in"
@@ -402,8 +408,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug",
-		"source" : "/Users/dp9443/Downloads/my-min-devkit"
+		"build" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug",
+		"source" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit"
 	},
 	"version" : 
 	{

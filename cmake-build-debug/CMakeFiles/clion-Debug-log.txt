@@ -1,6 +1,6 @@
-"/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Applications/CLion 2.app/Contents/bin/ninja/mac/aarch64/ninja" -G Ninja -S /Users/dp9443/Downloads/my-min-devkit -B /Users/dp9443/Downloads/my-min-devkit/cmake-build-debug
+"/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Applications/CLion 2.app/Contents/bin/ninja/mac/aarch64/ninja" -G Ninja -S "/Users/dp9443/Documents/Max 8/Packages/manta-devkit" -B "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug"
 using default version : 1.0.0
-Reading /Users/dp9443/Downloads/my-min-devkit/package-info.json
+Reading /Users/dp9443/Documents/Max 8/Packages/manta-devkit/package-info.json
 Building _____ 1.0.0 _____
 Generating Info.plist
 Generating Unit Test: Easing
@@ -34,4 +34,4 @@ CMake Deprecation Warning at source/projects/min.manta/CMakeLists.txt:4 (cmake_m
 -- Code signing with ad-hoc identity
 -- Configuring done (0.1s)
 -- Generating done (0.0s)
--- Build files have been written to: /Users/dp9443/Downloads/my-min-devkit/cmake-build-debug
+-- Build files have been written to: /Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug
