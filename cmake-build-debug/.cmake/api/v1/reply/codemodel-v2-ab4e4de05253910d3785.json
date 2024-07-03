@@ -1,0 +1,197 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.19"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "source/min-lib",
+					"jsonFile" : "directory-source.min-lib-Debug-fcb514f4a71afab79922.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "source/min-lib",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "source/projects/min.manta",
+					"childIndexes" : 
+					[
+						3
+					],
+					"jsonFile" : "directory-source.projects.min.manta-Debug-4cc042303db652eb3114.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "source/projects/min.manta",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "source/projects/min.manta/hidapi",
+					"childIndexes" : 
+					[
+						4
+					],
+					"jsonFile" : "directory-source.projects.min.manta.hidapi-Debug-8d731417a620a130f720.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1.3"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "source/projects/min.manta/hidapi"
+				},
+				{
+					"build" : "source/projects/min.manta/hidapi/src",
+					"childIndexes" : 
+					[
+						5
+					],
+					"jsonFile" : "directory-source.projects.min.manta.hidapi.src-Debug-d449c62934706156ab86.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1.3"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "source/projects/min.manta/hidapi/src"
+				},
+				{
+					"build" : "source/projects/min.manta/hidapi/src/mac",
+					"jsonFile" : "directory-source.projects.min.manta.hidapi.src.mac-Debug-8b73bf015de9e7b319d2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4.3"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 3,
+					"source" : "source/projects/min.manta/hidapi/mac",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "MantaMaxObject"
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "MinLib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2,
+						3
+					],
+					"name" : "min.manta",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4,
+						5
+					],
+					"name" : "hidapi",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "LIB::@14f4a2bdc337e5c9f600",
+					"jsonFile" : "target-LIB-Debug-8547fb1c86d3565a53bf.json",
+					"name" : "LIB",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "hidapi_darwin::@f8f2ce853967d02f6870",
+					"jsonFile" : "target-hidapi_darwin-Debug-523c721975c510c40288.json",
+					"name" : "hidapi_darwin",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "min.manta::@b3ef7042b2ad9970d619",
+					"jsonFile" : "target-min.manta-Debug-15163ba201e25793ee2a.json",
+					"name" : "min.manta",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/cmake-build-debug",
+		"source" : "/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

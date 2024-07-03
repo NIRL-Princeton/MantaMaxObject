@@ -6,6 +6,8 @@
 #include "c74_min.h"
 #include <hidapi.h>
 #include "Manta.h"
+#include "MantaExceptions.h"
+#include "MantaMulti.h"
 
 
 using namespace c74::min;
@@ -25,14 +27,42 @@ public:
     manta(const atoms& args = {})
     {
 
-
+        myManta.Connect();
+        cout << "my dudes, the connection is:" << myManta.IsConnected() << c74::min::endl;
          // initialized, we can switch our flag used to prevent unsafe access
         // in the attribute setters (below)
+
 		m_initialized = true;
 
+
+
     }
-    inlet<>  input	{ this, "(bang) coolest input" };
-    outlet<> output	{ this, "(number) approximate value of pi" };
+  inlet<>  input	{ this, "(bang) coolest input" };
+  outlet<> output	{ this, "(number) approximate value of pi" };
+    timer<> m_timer { this,
+    MIN_FUNCTION {
+      output.send(5);
+
+      /*try
+      {
+        MantaUSB::HandleEvents();
+      }
+      catch(MantaCommunicationException e) {
+        MantaMulti *errorManta = static_cast<MantaMulti *>(e.errorManta);
+        cout << "manta: Communication with Manta" << errorManta->GetSerialNumber() << "interrupted" << c74::min::endl;
+
+
+        delete errorManta;
+        //DetachAllManta(errorManta);
+        //ConnectedMantaList.remove(errorManta);
+      }
+      */
+      m_timer.delay(1);
+
+      return{};
+      }
+      };
+
 
     message<> bang { this, "bang", "coolest output",
         MIN_FUNCTION {

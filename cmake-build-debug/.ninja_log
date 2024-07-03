@@ -1,0 +1,12 @@
+# ninja log v5
+3	412	1720038138755963181	source/projects/min.manta/hidapi/src/mac/CMakeFiles/hidapi_darwin.dir/hid.c.o	23e966238711e926
+415	515	1720038138862068762	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.14.0.dylib	bd88a75b6718356
+516	540	1720038138862068762	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.dylib	267725e4a0d6a78
+516	540	1720038138862068762	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.dylib	267725e4a0d6a78
+2	757	1720038139101217974	source/projects/min.manta/CMakeFiles/min.manta.dir/Manta.cpp.o	3a39e418e0ad1370
+3	762	1720038139104883888	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaMulti.cpp.o	46caab580550b008
+3	805	1720038139150271228	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaUSB.cpp.o	c43bc48edcaea2c7
+14	3421	1720040165112548417	source/projects/min.manta/CMakeFiles/min.manta.dir/min.manta.cpp.o	bd0b414254d58f4
+3421	3580	1720040165285798080	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/min.manta.mxo/Contents/MacOS/min.manta	8bfeaac1f2174392
+11	3511	1720040280129111488	source/projects/min.manta/CMakeFiles/min.manta.dir/min.manta.cpp.o	bd0b414254d58f4
+3511	3674	1720040280307333785	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/min.manta.mxo/Contents/MacOS/min.manta	8bfeaac1f2174392
