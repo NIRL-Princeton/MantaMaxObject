@@ -1,0 +1,453 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						11
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.19"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "source/min-lib",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					],
+					"jsonFile" : "directory-source.min-lib-Debug-fcb514f4a71afab79922.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "source/min-lib",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "source/min-lib/test/Easing",
+					"jsonFile" : "directory-source.min-lib.test.Easing-Debug-85d7f313e4d10140aef7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "source/min-lib/test/Easing",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "source/min-lib/test/allpass",
+					"jsonFile" : "directory-source.min-lib.test.allpass-Debug-75e3a8060c993380d494.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "source/min-lib/test/allpass",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "source/min-lib/test/circular_storage",
+					"jsonFile" : "directory-source.min-lib.test.circular_storage-Debug-a91e14a00fe373b829fe.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 4,
+					"source" : "source/min-lib/test/circular_storage",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "source/min-lib/test/dcblocker",
+					"jsonFile" : "directory-source.min-lib.test.dcblocker-Debug-5d1618b8015e8793bbff.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 5,
+					"source" : "source/min-lib/test/dcblocker",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "source/min-lib/test/delay",
+					"jsonFile" : "directory-source.min-lib.test.delay-Debug-623705e3ea1dfc82f4fa.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 6,
+					"source" : "source/min-lib/test/delay",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "source/min-lib/test/generator",
+					"jsonFile" : "directory-source.min-lib.test.generator-Debug-721903bf9bb1194ca2a6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 7,
+					"source" : "source/min-lib/test/generator",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "source/min-lib/test/interpolator",
+					"jsonFile" : "directory-source.min-lib.test.interpolator-Debug-74f83a267389ddee45a1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 8,
+					"source" : "source/min-lib/test/interpolator",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "source/min-lib/test/onepole",
+					"jsonFile" : "directory-source.min-lib.test.onepole-Debug-327459cfad1dbab3482f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 9,
+					"source" : "source/min-lib/test/onepole",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "source/min-lib/test/oscillator",
+					"jsonFile" : "directory-source.min-lib.test.oscillator-Debug-5ad8dba8323dfa5e589f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 10,
+					"source" : "source/min-lib/test/oscillator",
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"build" : "source/projects/min.manta",
+					"jsonFile" : "directory-source.projects.min.manta-Debug-4cc042303db652eb3114.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 11,
+					"source" : "source/projects/min.manta",
+					"targetIndexes" : 
+					[
+						8
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						11
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "my-min-devkit"
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "MinLib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "Easing_test",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "allpass_test",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "circular_storage_test",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "dcblocker_test",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "delay_test",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "generator_test",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						8
+					],
+					"name" : "interpolator_test",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						9
+					],
+					"name" : "onepole_test",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						10
+					],
+					"name" : "oscillator_test",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						10
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						11
+					],
+					"name" : "min.manta",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "Easing_test::@6e35d2772c6eaa4eeee6",
+					"jsonFile" : "target-Easing_test-Debug-23723233be95b1639c44.json",
+					"name" : "Easing_test",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "LIB::@14f4a2bdc337e5c9f600",
+					"jsonFile" : "target-LIB-Debug-8547fb1c86d3565a53bf.json",
+					"name" : "LIB",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "allpass_test::@833359304237ebf8a0d9",
+					"jsonFile" : "target-allpass_test-Debug-c6566f493287196ed12d.json",
+					"name" : "allpass_test",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "circular_storage_test::@6f249bcecf57abc57df9",
+					"jsonFile" : "target-circular_storage_test-Debug-393a7297984fa7df1506.json",
+					"name" : "circular_storage_test",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "dcblocker_test::@b4e641817742ad942382",
+					"jsonFile" : "target-dcblocker_test-Debug-d664bd3a9571e0a0c546.json",
+					"name" : "dcblocker_test",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "delay_test::@bbbfe8ee5ab5d71c14cc",
+					"jsonFile" : "target-delay_test-Debug-455dc20ebef17df7b53f.json",
+					"name" : "delay_test",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "generator_test::@d3025205ffea01e7dc73",
+					"jsonFile" : "target-generator_test-Debug-461faa43032bee56a7b9.json",
+					"name" : "generator_test",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "interpolator_test::@7775a6a419ad5e90494c",
+					"jsonFile" : "target-interpolator_test-Debug-8dae7fe6a8716708238d.json",
+					"name" : "interpolator_test",
+					"projectIndex" : 8
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "min.manta::@b3ef7042b2ad9970d619",
+					"jsonFile" : "target-min.manta-Debug-1faaf3d727a590cf8f7e.json",
+					"name" : "min.manta",
+					"projectIndex" : 11
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "onepole_test::@c37e209598845fb2007f",
+					"jsonFile" : "target-onepole_test-Debug-37a210233255bbcddafd.json",
+					"name" : "onepole_test",
+					"projectIndex" : 9
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "oscillator_test::@ef73018eb17260e0c9b5",
+					"jsonFile" : "target-oscillator_test-Debug-a20e3155dcafc7eda058.json",
+					"name" : "oscillator_test",
+					"projectIndex" : 10
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug",
+		"source" : "/Users/dp9443/Downloads/my-min-devkit"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

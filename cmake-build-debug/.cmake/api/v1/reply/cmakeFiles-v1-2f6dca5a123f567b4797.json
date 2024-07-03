@@ -1,0 +1,413 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.28.1/CMakeSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin-Initialize.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.28.1/CMakeCCompiler.cmake"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/3.28.1/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Darwin.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/AppleClang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang-C.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-AppleClang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/Platform/Apple-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"path" : "source/min-api/script/min-package.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-package.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/git-rev.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/GetGitRevisionDescription.cmake"
+		},
+		{
+			"path" : ".git/HEAD"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/GetGitRevisionDescription.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/git-data/grabRef.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindGit.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CLion 2.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.28/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"path" : ".git/HEAD"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/GetGitRevisionDescription.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/CMakeFiles/git-data/grabRef.cmake"
+		},
+		{
+			"path" : "package-info.json.in"
+		},
+		{
+			"path" : "source/min-lib/CMakeLists.txt"
+		},
+		{
+			"path" : "source/min-lib/test/Easing/CMakeLists.txt"
+		},
+		{
+			"path" : "source/min-api/script/min-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/min-lib-unittest.cmake"
+		},
+		{
+			"path" : "source/min-api/script/min-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/allpass/CMakeLists.txt"
+		},
+		{
+			"path" : "source/min-api/script/min-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/min-lib-unittest.cmake"
+		},
+		{
+			"path" : "source/min-api/script/min-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/circular_storage/CMakeLists.txt"
+		},
+		{
+			"path" : "source/min-api/script/min-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/min-lib-unittest.cmake"
+		},
+		{
+			"path" : "source/min-api/script/min-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/dcblocker/CMakeLists.txt"
+		},
+		{
+			"path" : "source/min-api/script/min-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/min-lib-unittest.cmake"
+		},
+		{
+			"path" : "source/min-api/script/min-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/delay/CMakeLists.txt"
+		},
+		{
+			"path" : "source/min-api/script/min-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/min-lib-unittest.cmake"
+		},
+		{
+			"path" : "source/min-api/script/min-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/generator/CMakeLists.txt"
+		},
+		{
+			"path" : "source/min-api/script/min-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/min-lib-unittest.cmake"
+		},
+		{
+			"path" : "source/min-api/script/min-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/interpolator/CMakeLists.txt"
+		},
+		{
+			"path" : "source/min-api/script/min-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/min-lib-unittest.cmake"
+		},
+		{
+			"path" : "source/min-api/script/min-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/onepole/CMakeLists.txt"
+		},
+		{
+			"path" : "source/min-api/script/min-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/min-lib-unittest.cmake"
+		},
+		{
+			"path" : "source/min-api/script/min-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/oscillator/CMakeLists.txt"
+		},
+		{
+			"path" : "source/min-api/script/min-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-lib/test/min-lib-unittest.cmake"
+		},
+		{
+			"path" : "source/min-api/script/min-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-posttarget.cmake"
+		},
+		{
+			"path" : "source/projects/min.manta/CMakeLists.txt"
+		},
+		{
+			"path" : "source/min-api/script/min-pretarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-pretarget.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/hidapi/hidapi-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/hidapi/hidapi-config.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/hidapi/libhidapi.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/hidapi/libhidapi-release.cmake"
+		},
+		{
+			"path" : "source/min-api/script/min-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/max-posttarget.cmake"
+		},
+		{
+			"path" : "source/min-api/test/min-object-unittest.cmake"
+		},
+		{
+			"path" : "source/min-api/max-sdk-base/script/Info.plist.in"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug",
+		"source" : "/Users/dp9443/Downloads/my-min-devkit"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}
