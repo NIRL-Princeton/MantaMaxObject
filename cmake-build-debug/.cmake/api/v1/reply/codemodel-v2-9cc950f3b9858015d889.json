@@ -210,7 +210,7 @@
 					[
 						0
 					],
-					"name" : "my-min-devkit"
+					"name" : "manta-devkit"
 				},
 				{
 					"childIndexes" : 
@@ -362,7 +362,7 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "Easing_test::@6e35d2772c6eaa4eeee6",
-					"jsonFile" : "target-Easing_test-Debug-23723233be95b1639c44.json",
+					"jsonFile" : "target-Easing_test-Debug-40a8528c881fcdd9bb98.json",
 					"name" : "Easing_test",
 					"projectIndex" : 2
 				},
@@ -376,63 +376,63 @@
 				{
 					"directoryIndex" : 3,
 					"id" : "allpass_test::@833359304237ebf8a0d9",
-					"jsonFile" : "target-allpass_test-Debug-c6566f493287196ed12d.json",
+					"jsonFile" : "target-allpass_test-Debug-2da6e7dcbe5da7a861e6.json",
 					"name" : "allpass_test",
 					"projectIndex" : 3
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "circular_storage_test::@6f249bcecf57abc57df9",
-					"jsonFile" : "target-circular_storage_test-Debug-393a7297984fa7df1506.json",
+					"jsonFile" : "target-circular_storage_test-Debug-4a7b049b5efd54e5a479.json",
 					"name" : "circular_storage_test",
 					"projectIndex" : 4
 				},
 				{
 					"directoryIndex" : 5,
 					"id" : "dcblocker_test::@b4e641817742ad942382",
-					"jsonFile" : "target-dcblocker_test-Debug-d664bd3a9571e0a0c546.json",
+					"jsonFile" : "target-dcblocker_test-Debug-6e0e6558f97466d0a721.json",
 					"name" : "dcblocker_test",
 					"projectIndex" : 5
 				},
 				{
 					"directoryIndex" : 6,
 					"id" : "delay_test::@bbbfe8ee5ab5d71c14cc",
-					"jsonFile" : "target-delay_test-Debug-455dc20ebef17df7b53f.json",
+					"jsonFile" : "target-delay_test-Debug-fea2bc1c5701f5a5dd39.json",
 					"name" : "delay_test",
 					"projectIndex" : 6
 				},
 				{
 					"directoryIndex" : 7,
 					"id" : "generator_test::@d3025205ffea01e7dc73",
-					"jsonFile" : "target-generator_test-Debug-461faa43032bee56a7b9.json",
+					"jsonFile" : "target-generator_test-Debug-7c2573fd87d4fbd79118.json",
 					"name" : "generator_test",
 					"projectIndex" : 7
 				},
 				{
 					"directoryIndex" : 8,
 					"id" : "interpolator_test::@7775a6a419ad5e90494c",
-					"jsonFile" : "target-interpolator_test-Debug-8dae7fe6a8716708238d.json",
+					"jsonFile" : "target-interpolator_test-Debug-25e2be120b492f11748b.json",
 					"name" : "interpolator_test",
 					"projectIndex" : 8
 				},
 				{
 					"directoryIndex" : 11,
 					"id" : "min.manta::@b3ef7042b2ad9970d619",
-					"jsonFile" : "target-min.manta-Debug-1faaf3d727a590cf8f7e.json",
+					"jsonFile" : "target-min.manta-Debug-20d16674cfc06a558de8.json",
 					"name" : "min.manta",
 					"projectIndex" : 11
 				},
 				{
 					"directoryIndex" : 9,
 					"id" : "onepole_test::@c37e209598845fb2007f",
-					"jsonFile" : "target-onepole_test-Debug-37a210233255bbcddafd.json",
+					"jsonFile" : "target-onepole_test-Debug-4ae047e59850b6ac659d.json",
 					"name" : "onepole_test",
 					"projectIndex" : 9
 				},
 				{
 					"directoryIndex" : 10,
 					"id" : "oscillator_test::@ef73018eb17260e0c9b5",
-					"jsonFile" : "target-oscillator_test-Debug-a20e3155dcafc7eda058.json",
+					"jsonFile" : "target-oscillator_test-Debug-d743235bc8437f92202a.json",
 					"name" : "oscillator_test",
 					"projectIndex" : 10
 				}
@@ -442,8 +442,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug",
-		"source" : "/Users/dp9443/Downloads/my-min-devkit"
+		"build" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug",
+		"source" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit"
 	},
 	"version" : 
 	{

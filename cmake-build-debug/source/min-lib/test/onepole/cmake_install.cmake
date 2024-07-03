@@ -1,4 +1,4 @@
-# Install script for directory: /Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/onepole
+# Install script for directory: /Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/onepole
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

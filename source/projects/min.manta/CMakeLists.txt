@@ -13,13 +13,18 @@ find_package(hidapi REQUIRED)
 #############################################################
 
 
-include_directories( 
+include_directories(
 	"${C74_INCLUDES}"
 )
+
+include_directories(${CMAKE_CURRENT_LIST_DIR}/include)
 
 
 set( SOURCE_FILES
 	${PROJECT_NAME}.cpp
+	Manta.cpp
+		MantaMulti.cpp
+		MantaUSB.cpp
 )
 
 

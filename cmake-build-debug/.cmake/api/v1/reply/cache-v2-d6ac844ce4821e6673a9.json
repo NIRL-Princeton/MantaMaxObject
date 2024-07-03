@@ -67,7 +67,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -491,7 +491,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -551,7 +551,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit"
 		},
 		{
 			"name" : "CMAKE_INSTALL_NAME_TOOL",
@@ -831,7 +831,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "my-min-devkit"
+			"value" : "manta-devkit"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1139,7 +1139,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/Easing"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/Easing"
 		},
 		{
 			"name" : "Easing_EXTERN_OUTPUT_NAME",
@@ -1179,7 +1179,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/Easing"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/Easing"
 		},
 		{
 			"name" : "Easing_test_BINARY_DIR",
@@ -1191,7 +1191,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/Easing"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/Easing"
 		},
 		{
 			"name" : "Easing_test_IS_TOP_LEVEL",
@@ -1215,7 +1215,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/Easing"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/Easing"
 		},
 		{
 			"name" : "GIT_EXECUTABLE",
@@ -1243,7 +1243,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-api/max-sdk-base/c74support/jit-includes/JitterAPI.framework"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/max-sdk-base/c74support/jit-includes/JitterAPI.framework"
 		},
 		{
 			"name" : "MAX_SDK_CODESIGN_EXTERNS",
@@ -1267,7 +1267,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-api/max-sdk-base/c74support/msp-includes/MaxAudioAPI.framework"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/max-sdk-base/c74support/msp-includes/MaxAudioAPI.framework"
 		},
 		{
 			"name" : "Min-DevKit_BINARY_DIR",
@@ -1279,7 +1279,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug"
 		},
 		{
 			"name" : "Min-DevKit_IS_TOP_LEVEL",
@@ -1303,7 +1303,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit"
 		},
 		{
 			"name" : "MinLib_BINARY_DIR",
@@ -1315,7 +1315,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib"
 		},
 		{
 			"name" : "MinLib_IS_TOP_LEVEL",
@@ -1339,7 +1339,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib"
 		},
 		{
 			"name" : "allpass_BINARY_DIR",
@@ -1351,7 +1351,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/allpass"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/allpass"
 		},
 		{
 			"name" : "allpass_EXTERN_OUTPUT_NAME",
@@ -1391,7 +1391,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/allpass"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/allpass"
 		},
 		{
 			"name" : "allpass_test_BINARY_DIR",
@@ -1403,7 +1403,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/allpass"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/allpass"
 		},
 		{
 			"name" : "allpass_test_IS_TOP_LEVEL",
@@ -1427,7 +1427,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/allpass"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/allpass"
 		},
 		{
 			"name" : "circular_storage_BINARY_DIR",
@@ -1439,7 +1439,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/circular_storage"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/circular_storage"
 		},
 		{
 			"name" : "circular_storage_EXTERN_OUTPUT_NAME",
@@ -1479,7 +1479,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/circular_storage"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/circular_storage"
 		},
 		{
 			"name" : "circular_storage_test_BINARY_DIR",
@@ -1491,7 +1491,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/circular_storage"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/circular_storage"
 		},
 		{
 			"name" : "circular_storage_test_IS_TOP_LEVEL",
@@ -1515,7 +1515,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/circular_storage"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/circular_storage"
 		},
 		{
 			"name" : "dcblocker_BINARY_DIR",
@@ -1527,7 +1527,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/dcblocker"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/dcblocker"
 		},
 		{
 			"name" : "dcblocker_EXTERN_OUTPUT_NAME",
@@ -1567,7 +1567,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/dcblocker"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/dcblocker"
 		},
 		{
 			"name" : "dcblocker_test_BINARY_DIR",
@@ -1579,7 +1579,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/dcblocker"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/dcblocker"
 		},
 		{
 			"name" : "dcblocker_test_IS_TOP_LEVEL",
@@ -1603,7 +1603,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/dcblocker"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/dcblocker"
 		},
 		{
 			"name" : "delay_BINARY_DIR",
@@ -1615,7 +1615,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/delay"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/delay"
 		},
 		{
 			"name" : "delay_EXTERN_OUTPUT_NAME",
@@ -1655,7 +1655,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/delay"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/delay"
 		},
 		{
 			"name" : "delay_test_BINARY_DIR",
@@ -1667,7 +1667,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/delay"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/delay"
 		},
 		{
 			"name" : "delay_test_IS_TOP_LEVEL",
@@ -1691,7 +1691,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/delay"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/delay"
 		},
 		{
 			"name" : "generator_BINARY_DIR",
@@ -1703,7 +1703,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/generator"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/generator"
 		},
 		{
 			"name" : "generator_EXTERN_OUTPUT_NAME",
@@ -1743,7 +1743,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/generator"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/generator"
 		},
 		{
 			"name" : "generator_test_BINARY_DIR",
@@ -1755,7 +1755,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/generator"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/generator"
 		},
 		{
 			"name" : "generator_test_IS_TOP_LEVEL",
@@ -1779,7 +1779,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/generator"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/generator"
 		},
 		{
 			"name" : "hidapi_DIR",
@@ -1803,7 +1803,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/interpolator"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/interpolator"
 		},
 		{
 			"name" : "interpolator_EXTERN_OUTPUT_NAME",
@@ -1843,7 +1843,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/interpolator"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/interpolator"
 		},
 		{
 			"name" : "interpolator_test_BINARY_DIR",
@@ -1855,7 +1855,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/interpolator"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/interpolator"
 		},
 		{
 			"name" : "interpolator_test_IS_TOP_LEVEL",
@@ -1879,7 +1879,43 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/interpolator"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/interpolator"
+		},
+		{
+			"name" : "manta-devkit_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug"
+		},
+		{
+			"name" : "manta-devkit_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "manta-devkit_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit"
 		},
 		{
 			"name" : "min.manta_BINARY_DIR",
@@ -1891,7 +1927,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/projects/min.manta"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/projects/min.manta"
 		},
 		{
 			"name" : "min.manta_EXTERN_OUTPUT_NAME",
@@ -1931,7 +1967,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "general;/Users/dp9443/Downloads/my-min-devkit/source/min-api/max-sdk-base/c74support/msp-includes/MaxAudioAPI.framework;general;/Users/dp9443/Downloads/my-min-devkit/source/min-api/max-sdk-base/c74support/jit-includes/JitterAPI.framework;"
+			"value" : "general;/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/max-sdk-base/c74support/msp-includes/MaxAudioAPI.framework;general;/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/max-sdk-base/c74support/jit-includes/JitterAPI.framework;"
 		},
 		{
 			"name" : "min.manta_SOURCE_DIR",
@@ -1943,43 +1979,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/projects/min.manta"
-		},
-		{
-			"name" : "my-min-devkit_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug"
-		},
-		{
-			"name" : "my-min-devkit_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "my-min-devkit_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/projects/min.manta"
 		},
 		{
 			"name" : "onepole_BINARY_DIR",
@@ -1991,7 +1991,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/onepole"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/onepole"
 		},
 		{
 			"name" : "onepole_EXTERN_OUTPUT_NAME",
@@ -2031,7 +2031,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/onepole"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/onepole"
 		},
 		{
 			"name" : "onepole_test_BINARY_DIR",
@@ -2043,7 +2043,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/onepole"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/onepole"
 		},
 		{
 			"name" : "onepole_test_IS_TOP_LEVEL",
@@ -2067,7 +2067,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/onepole"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/onepole"
 		},
 		{
 			"name" : "oscillator_BINARY_DIR",
@@ -2079,7 +2079,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/oscillator"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/oscillator"
 		},
 		{
 			"name" : "oscillator_EXTERN_OUTPUT_NAME",
@@ -2119,7 +2119,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/oscillator"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/oscillator"
 		},
 		{
 			"name" : "oscillator_test_BINARY_DIR",
@@ -2131,7 +2131,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/cmake-build-debug/source/min-lib/test/oscillator"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/oscillator"
 		},
 		{
 			"name" : "oscillator_test_IS_TOP_LEVEL",
@@ -2155,7 +2155,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/Users/dp9443/Downloads/my-min-devkit/source/min-lib/test/oscillator"
+			"value" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib/test/oscillator"
 		}
 	],
 	"kind" : "cache",
