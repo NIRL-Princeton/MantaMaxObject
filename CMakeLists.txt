@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.19)
+set(C74_BUILD_FAT 1)
 project(Min-DevKit)
 
 enable_testing()

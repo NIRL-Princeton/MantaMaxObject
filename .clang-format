@@ -18,7 +18,7 @@ FixNamespaceComments: true
 
 SpacesBeforeTrailingComments: 4
 
-BreakBeforeBraces: Custom
+BreakBeforeBraces: true
 BraceWrapping:   
   AfterClass:      false
   AfterControlStatement: false
