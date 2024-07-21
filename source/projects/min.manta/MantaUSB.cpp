@@ -205,13 +205,14 @@ void MantaUSB::HandleEvents(void)
                frame[i], frame[i+1], frame[i+2], frame[i+3], frame[i+4],
                frame[i+5], frame[i+6], frame[i+7]);
       }
-      delete txMessage;
+
       if(bytesWritten < 0)
       {
-         txMessage->TargetManta->DebugPrint("%s-%d: Write error on Manta %d",
-               __FILE__, __LINE__, txMessage->TargetManta->GetSerialNumber());
+         txMessage->TargetManta->DebugPrint("%s-%d: Write error on Manta",
+               __FILE__, __LINE__);
          throw(MantaCommunicationException(txMessage->TargetManta));
       }
+       delete txMessage;
    }
 }
 

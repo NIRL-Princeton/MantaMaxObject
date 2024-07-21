@@ -13,7 +13,7 @@
 	<!--METADATA-->
 
 	<metadatalist>
-		<metadata name='author'>Jeff Snyder </metadata>
+		<metadata name='author'>Jeff Snyder and Spencer Russell </metadata>
 		<metadata name='tag'>control</metadata>
 	</metadatalist>
 
@@ -22,6 +22,11 @@
 
 	<objarglist>
 
+		<objarg name='serial number' optional='1' type='number'>
+			<digest>Manta serial number to look for (if you are using multiple mantas) </digest>
+			<description>Manta serial number to look for (if you are using multiple mantas) </description>
+		</objarg>
+
 	</objarglist>
 
 
@@ -29,9 +34,74 @@
 
 	<methodlist>
 
+		<method name='connect'>
+			<digest>connect to manta </digest>
+			<description>connect to manta </description>
+		</method>
+
 		<method name='bang'>
 			<digest>coolest output </digest>
 			<description>coolest output </description>
+		</method>
+
+		<method name='raw'>
+			<digest>turn on/off raw mode (output raw sensor values, without removing baseline values) </digest>
+			<description>turn on/off raw mode (output raw sensor values, without removing baseline values) </description>
+		</method>
+
+		<method name='ledcontrol'>
+			<digest>set LED control </digest>
+			<description>set LED control </description>
+		</method>
+
+		<method name='slidermask'>
+			<digest>set slider led with bitmask </digest>
+			<description>set slider led with bitmask </description>
+		</method>
+
+		<method name='reset'>
+			<digest>recalibrate manta </digest>
+			<description>recalibrate manta </description>
+		</method>
+
+		<method name='button'>
+			<digest>set button led </digest>
+			<description>set button led </description>
+		</method>
+
+		<method name='slider'>
+			<digest>set slider led </digest>
+			<description>set slider led </description>
+		</method>
+
+		<method name='row'>
+			<digest>set pad row led </digest>
+			<description>set pad row led </description>
+		</method>
+
+		<method name='oneindex'>
+			<digest>turn on/off one indexed mode (first sensor is 1 instead of 0) </digest>
+			<description>turn on/off one indexed mode (first sensor is 1 instead of 0) </description>
+		</method>
+
+		<method name='turbo'>
+			<digest>turn on/off turbo mode (scan only the bottom 16 sensors but much faster) </digest>
+			<description>turn on/off turbo mode (scan only the bottom 16 sensors but much faster) </description>
+		</method>
+
+		<method name='column'>
+			<digest>set pad column led </digest>
+			<description>set pad column led </description>
+		</method>
+
+		<method name='ledsoff'>
+			<digest>clear all pad and button leds </digest>
+			<description>clear all pad and button leds </description>
+		</method>
+
+		<method name='pad'>
+			<digest>set pad led </digest>
+			<description>set pad led </description>
 		</method>
 
 	</methodlist>

@@ -53,16 +53,17 @@ private:
    c74::max::t_symbol *frameSymbol;
    c74::max::t_symbol *padAndButtonSymbol;
    c74::max::t_symbol *ledsOffSymbol;
-
+    mutex mtx;
 public:
 
   MIN_DESCRIPTION	{ "Snyderphonics Manta Object" };
   MIN_TAGS		{ "control" };
-  MIN_AUTHOR		{ "Jeff Snyder" };
+  MIN_AUTHOR		{ "Jeff Snyder and Spencer Russell" };
   MIN_RELATED		{ "hi" };
   //Manta myManta;
 void PollConnectedMantas()
   {
+    mtx.lock();
     try
     {
       MantaUSB::HandleEvents();
@@ -72,15 +73,21 @@ void PollConnectedMantas()
     {
       MantaMulti *errorManta = static_cast<MantaMulti *>(e.errorManta);
       cout << "manta: Communication with Manta " << errorManta->GetSerialNumber() << " interrupted" << c74::min::endl;
-      delete errorManta;
+        delete errorManta;
       DetachAllMantaFlext(errorManta);
       ConnectedMantaList.remove(errorManta);
+        if(ConnectedMantaList.empty())
+        {
+          pollTimerOn = 0;
+        }
+
     }
+    mtx.unlock();
   }
 
   void Detach()
   {
-    cout << "detach called" << c74::min::endl;
+    //cout << "detach called" << c74::min::endl;
     if(Attached())
     {
       cout << "manta: Detaching from manta " << ConnectedManta->GetSerialNumber() << c74::min::endl;
@@ -90,9 +97,11 @@ void PollConnectedMantas()
          * get called for the cancelled USB transfers, there will probably
          * be a segfault */
         cout << "manta: no more connections to manta " << ConnectedManta->GetSerialNumber() << ", destroying." << c74::min::endl;
-        delete ConnectedManta;
+
         ConnectedMantaList.remove(ConnectedManta);
+          delete ConnectedManta;
         ConnectedManta = NULL;
+          
       }
       else
       {
@@ -119,15 +128,15 @@ void PollConnectedMantas()
 
       MantaMulti *device = FindConnectedMantaBySerial(serialNumber);
       /* see if the device is already in the connected list */
-      cout << "ifnotattached " << ConnectedMantaList.size() << c74::min::endl;
+      //cout << "ifnotattached " << ConnectedMantaList.size() << c74::min::endl;
       if(NULL != device)
       {
         cout << "manta: Attaching to manta " << device->GetSerialNumber() << c74::min::endl;
         device->AttachClient(this);
         ConnectedManta = device;
-        cout << "beforepush1 " << ConnectedMantaList.size() << c74::min::endl;
+        //cout << "beforepush1 " << ConnectedMantaList.size() << c74::min::endl;
         ConnectedMantaList.push_back(ConnectedManta);
-        cout << "afterpush1 " << ConnectedMantaList.size() << c74::min::endl;
+        //cout << "afterpush1 " << ConnectedMantaList.size() << c74::min::endl;
       }
       else {
         /* TODO: open by serial number */
@@ -139,9 +148,9 @@ void PollConnectedMantas()
           device->AttachClient(this);
           device->ResendLEDState();
           ConnectedManta = device;
-          cout << "beforepush2 " << ConnectedMantaList.size() << c74::min::endl;
+         // cout << "beforepush2 " << ConnectedMantaList.size() << c74::min::endl;
           ConnectedMantaList.push_back(ConnectedManta);
-          cout << "afterpush2 " << ConnectedMantaList.size() << c74::min::endl;
+         // cout << "afterpush2 " << ConnectedMantaList.size() << c74::min::endl;
         }
         catch(MantaNotFoundException e)
         {
@@ -157,7 +166,7 @@ void PollConnectedMantas()
         if(!ConnectedMantaList.empty())
         {
           pollTimerOn = 1;
-          cout << "got Mantas " << ConnectedMantaList.size() << c74::min::endl;
+          //cout << "got Mantas " << ConnectedMantaList.size() << c74::min::endl;
           metro.delay(0.0);    //communication with manta started
         }
       }
@@ -293,13 +302,13 @@ MantaServer::LEDState ledStateFromInt(int state)
   message<> ledcontrol { this, "ledcontrol", "set LED control",
 
      MIN_FUNCTION {
-       cout <<"ledcontrol" << c74::min::endl;
-       cout << args[0]<< c74::min::endl;
-       cout << args[1]<< c74::min::endl;
+       //cout <<"ledcontrol" << c74::min::endl;
+       //cout << args[0]<< c74::min::endl;
+       //cout << args[1]<< c74::min::endl;
        c74::max::t_symbol* control = from_atoms<c74::max::t_symbol*>(args);
        int state = args[1];
-       cout << control << c74::min::endl;
-       cout << state << c74::min::endl;
+       //cout << control << c74::min::endl;
+       //cout << state << c74::min::endl;
        if(Attached())
        {
          if(control == padAndButtonSymbol)
@@ -560,15 +569,15 @@ MIN_FUNCTION
     inputArg = args[0];
     listOfMantaObjects.push_back(this);
     //cout << "trying Serial Number" << inputArg << c74::min::endl;
-    //if(!args.empty())
-    {
-     // Attach(inputArg);
-
-    }
-    //else
-    {
-     // Attach(0);
-    }
+//    if(!args.empty())
+//    {
+//      Attach(inputArg);
+//
+//    }
+//    else
+//    {
+//      Attach(0);
+//    }
 
     //myManta.Connect();
     // initialized, we can switch our flag used to prevent unsafe access
