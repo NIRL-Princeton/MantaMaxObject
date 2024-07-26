@@ -229,7 +229,7 @@ void PollConnectedMantas()
     int const fixedValue1 = (value != 0xFFFF) ? value : lastSliderValue[id];
     int const fixedValue2 =(value != 0xFFFF) ? 1 : 0;
 
-    slider_outlet.send(sliderSymbol, fixedID, fixedValue1, fixedValue2);
+    slider_outlet.send(fixedID, fixedValue1, fixedValue2);
     lastSliderValue[id] = value;
   }
 
@@ -363,9 +363,11 @@ MantaServer::LEDState ledStateFromInt(int state)
 
         for(int i = 1; i < args.size(); ++i)
         {
-
-            ConnectedManta->SetPadLED(parsedState, (int)args[i]- (OneIndexed ? 1 : 0));
-
+            int padNumber =(int)args[i] - (OneIndexed ? 1 : 0);
+            if ((padNumber >= 0) && (padNumber < 48))
+            {
+                ConnectedManta->SetPadLED(parsedState, padNumber);
+            }
         }
       }
       return {};
@@ -377,17 +379,22 @@ MantaServer::LEDState ledStateFromInt(int state)
   {
     if(Attached())
     {
-      MantaServer::LEDState parsedState;
-      c74::max::t_symbol* control = from_atoms<c74::max::t_symbol*>(args);
-      if ((control == amberSymbol) || (control == redSymbol) || (control == offSymbol))
-      {
-        parsedState = ledStateFromSymbol(control);
-      }
-      else
-      {
-        parsedState = ledStateFromInt((args[0]));
-      }
-      ConnectedManta->SetPadLEDRow(parsedState, (int)args[1] - (OneIndexed ? 1 : 0), (int)args[2]);
+        MantaServer::LEDState parsedState;
+        c74::max::t_symbol* control = from_atoms<c74::max::t_symbol*>(args);
+        if ((control == amberSymbol) || (control == redSymbol) || (control == offSymbol))
+        {
+            parsedState = ledStateFromSymbol(control);
+        }
+        else
+        {
+            parsedState = ledStateFromInt((args[0]));
+        }
+
+        int rowNumber =(int)args[1]- (OneIndexed ? 1 : 0);
+        if ((rowNumber >= 0) && (rowNumber < 6))
+        {
+            ConnectedManta->SetPadLEDRow(parsedState, rowNumber, (int)args[2]);
+        }
     }
     return {};
   }
@@ -397,18 +404,22 @@ MantaServer::LEDState ledStateFromInt(int state)
   MIN_FUNCTION
   {
     if(Attached()) {
-      MantaServer::LEDState parsedState;
-      c74::max::t_symbol* control = from_atoms<c74::max::t_symbol*>(args);
-      if ((control == amberSymbol) || (control == redSymbol) || (control == offSymbol))
-      {
-        parsedState = ledStateFromSymbol(control);
-      }
-      else
-      {
-        parsedState = ledStateFromInt((args[0]));
-      }
-
-      ConnectedManta->SetPadLEDColumn(parsedState, (int)args[1] - (OneIndexed ? 1 : 0), (int)args[2]);
+        MantaServer::LEDState parsedState;
+        c74::max::t_symbol* control = from_atoms<c74::max::t_symbol*>(args);
+        if ((control == amberSymbol) || (control == redSymbol) || (control == offSymbol))
+        {
+            parsedState = ledStateFromSymbol(control);
+        }
+        else
+        {
+            parsedState = ledStateFromInt((args[0]));
+        }
+        int columnNumber =(int)args[1] - (OneIndexed ? 1 : 0);
+        if ((columnNumber >= 0) && (columnNumber < 8))
+        {
+            ConnectedManta->SetPadLEDColumn(parsedState, columnNumber, (int)args[2]);
+        }
+      
 
     }
     return {};
@@ -426,11 +437,13 @@ MantaServer::LEDState ledStateFromInt(int state)
        }
        else
        {
-         parsedState = ledStateFromInt((args[0]));
+         parsedState = ledStateFromInt(args[0]);
        }
-
-       ConnectedManta->SetSliderLED(parsedState, (int)args[1]- (OneIndexed ? 1 : 0),(int)args[2]);
-
+         int LEDindex = (int)args[1] - (OneIndexed ? 1 : 0);
+         if ((LEDindex >= 0) && (LEDindex < 2))
+         {
+             ConnectedManta->SetSliderLED(parsedState, LEDindex, (int)args[2]);
+         }
      }
      return {};
    }
@@ -440,25 +453,9 @@ MantaServer::LEDState ledStateFromInt(int state)
      MIN_FUNCTION
      {
        if(Attached()) {
-         MantaServer::LEDState parsedState;
-         c74::max::t_symbol* control = from_atoms<c74::max::t_symbol*>(args);
-         if ((control == amberSymbol) || (control == redSymbol) || (control == offSymbol))
-         {
-           parsedState = ledStateFromSymbol(control);
-         }
-         else
-         {
-           parsedState = ledStateFromInt((args[0]));
-         }
 
-
-         if(parsedState == 0)
-         {
-            /* turn all LEDs on that slider off */
-            ConnectedManta->SetSliderLED(MantaServer::Off, (int)args[1], 0xFF);
-         }
-         int id = (int)args[1];
-         int ledNum = (int)args[2];
+         int id = (int)args[0];
+         int ledNum = (int)args[1];
          if(OneIndexed)
          {
             id -= 1;
@@ -497,7 +494,11 @@ MantaServer::LEDState ledStateFromInt(int state)
 
         for(int i = 1; i < args.size(); ++i)
         {
-          ConnectedManta->SetButtonLED(parsedState, (int)args[i]- (OneIndexed ? 1 : 0));
+            int buttonNumber =(int)args[i] - (OneIndexed ? 1 : 0);
+            if ((buttonNumber >= 0) && (buttonNumber < 4))
+            {
+                ConnectedManta->SetButtonLED(parsedState,buttonNumber);
+            }
         }
       }
       return {};
@@ -529,7 +530,7 @@ MantaServer::LEDState ledStateFromInt(int state)
  {
    if(Attached())
    {
-     ConnectedManta->SetTurboMode((int) args[0]);
+     ConnectedManta->SetTurboMode(((int) args[0] > 0));
    }
    return {};
  }
@@ -540,7 +541,7 @@ MIN_FUNCTION
 {
   if(Attached())
   {
-    ConnectedManta->SetRawMode((int) args[0]);
+    ConnectedManta->SetRawMode(((int) args[0] > 0));
   }
   return {};
 }
@@ -550,7 +551,7 @@ MIN_FUNCTION
  MIN_FUNCTION
  {
 
-     OneIndexed = (int) args[0];
+     OneIndexed = ((int) args[0]) > 0;
 
    return {};
  }
