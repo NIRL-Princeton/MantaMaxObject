@@ -39,11 +39,6 @@
 			<description>connect to manta </description>
 		</method>
 
-		<method name='bang'>
-			<digest>coolest output </digest>
-			<description>coolest output </description>
-		</method>
-
 		<method name='raw'>
 			<digest>turn on/off raw mode (output raw sensor values, without removing baseline values) </digest>
 			<description>turn on/off raw mode (output raw sensor values, without removing baseline values) </description>

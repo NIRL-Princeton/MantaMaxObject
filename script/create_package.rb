@@ -53,7 +53,7 @@ puts ""
 # 3. Copy everything we want, nothing we don't.
 #    Git Submodules will be added at the very end.
 
-hello_world = "#{package_name}.hello-world"
+hello_world = "#{package_name}.manta"
 
 FileUtils::mkdir_p "#{target_dir}/build"
 FileUtils::mkdir_p "#{target_dir}/source/projects/#{hello_world}"
@@ -67,10 +67,9 @@ FileUtils::cp "#{source_dir}/CMakeLists.txt",  "#{target_dir}/CMakeLists.txt"
 
 FileUtils::cp "#{source_dir}/.gitignore", "#{target_dir}/.gitignore"
 
-FileUtils::cp "#{source_dir}/source/projects/min.hello-world/min.hello-world.cpp", "#{target_dir}/source/projects/#{hello_world}/#{hello_world}.cpp"
-FileUtils::cp "#{source_dir}/source/projects/min.hello-world/min.hello-world_test.cpp", "#{target_dir}/source/projects/#{hello_world}/#{hello_world}_test.cpp"
-FileUtils::cp "#{source_dir}/source/projects/min.hello-world/CMakeLists.txt", "#{target_dir}/source/projects/#{hello_world}/CMakeLists.txt"
-FileUtils::cp "#{source_dir}/help/min.hello-world.maxhelp", "#{target_dir}/help/#{hello_world}.maxhelp"
+FileUtils::cp "#{source_dir}/source/projects/min.manta/min.manta.cpp", "#{target_dir}/source/projects/#{hello_world}/#{hello_world}.cpp"
+FileUtils::cp "#{source_dir}/source/projects/min.manta/CMakeLists.txt", "#{target_dir}/source/projects/#{hello_world}/CMakeLists.txt"
+FileUtils::cp "#{source_dir}/help/min.manta.maxhelp", "#{target_dir}/help/#{hello_world}.maxhelp"
 
 FileUtils::cp "#{source_dir}/HowTo-NewObject.md", "#{target_dir}/HowTo-NewObject.md"
 
@@ -87,7 +86,6 @@ end
 
 
 substitute_strings_in_file "#{target_dir}/help/#{hello_world}.maxhelp", "min.hello-world", "#{hello_world}"
-substitute_strings_in_file "#{target_dir}/source/projects/#{hello_world}/#{hello_world}_test.cpp", "min.hello-world", "#{hello_world}"
 substitute_strings_in_file "#{target_dir}/ReadMe.md", "My Package", "#{package_name}"
 
 

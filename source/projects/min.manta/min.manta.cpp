@@ -33,6 +33,7 @@ private:
   MantaMulti *ConnectedManta;
   bool OneIndexed;
   int inputArg;
+    int errorHappened;
   //static void PollConnectedMantas(void *param);
   //static MantaMulti *FindConnectedMantaBySerial(int serialNumber);
   //static void DetachAllMantaFlext(MantaMulti *multi);
@@ -71,7 +72,8 @@ void PollConnectedMantas()
     }
     catch(MantaCommunicationException e)
     {
-      MantaMulti *errorManta = static_cast<MantaMulti *>(e.errorManta);
+        errorHappened = 1;
+        MantaMulti *errorManta = static_cast<MantaMulti *>(e.errorManta);
       cout << "manta: Communication with Manta " << errorManta->GetSerialNumber() << " interrupted" << c74::min::endl;
         delete errorManta;
       DetachAllMantaFlext(errorManta);
@@ -88,6 +90,7 @@ void PollConnectedMantas()
   void Detach()
   {
     //cout << "detach called" << c74::min::endl;
+      errorHappened = 1;
     if(Attached())
     {
       cout << "manta: Detaching from manta " << ConnectedManta->GetSerialNumber() << c74::min::endl;
@@ -133,6 +136,7 @@ void PollConnectedMantas()
       {
         cout << "manta: Attaching to manta " << device->GetSerialNumber() << c74::min::endl;
         device->AttachClient(this);
+          device->ResendLEDState();
         ConnectedManta = device;
         //cout << "beforepush1 " << ConnectedMantaList.size() << c74::min::endl;
         ConnectedMantaList.push_back(ConnectedManta);
@@ -166,6 +170,7 @@ void PollConnectedMantas()
         if(!ConnectedMantaList.empty())
         {
           pollTimerOn = 1;
+            errorHappened = 0;
           //cout << "got Mantas " << ConnectedMantaList.size() << c74::min::endl;
           metro.delay(0.0);    //communication with manta started
         }
@@ -551,7 +556,21 @@ MIN_FUNCTION
  }
   };
 
+    timer<> metro { this,
+          MIN_FUNCTION {
+              if ((ConnectedManta == NULL)&&(!errorHappened))
+              {
+                  Attach(inputArg);
+              }
+            if (pollTimerOn) {
 
+              //cout << "hi" << c74::min::endl;
+              PollConnectedMantas();
+              metro.delay(2.0);
+            }
+            return {};
+          }
+    };
   manta(const atoms& args = {}):ConnectedManta(NULL),OneIndexed(false), pollTimerOn(0)
   {
   padSymbol = c74::max::gensym("pad");
@@ -567,6 +586,7 @@ MIN_FUNCTION
   padAndButtonSymbol = c74::max::gensym("padandbutton");
   ledsOffSymbol = c74::max::gensym("ledsoff");
     inputArg = args[0];
+      errorHappened = 0;
     listOfMantaObjects.push_back(this);
     //cout << "trying Serial Number" << inputArg << c74::min::endl;
 //    if(!args.empty())
@@ -582,7 +602,7 @@ MIN_FUNCTION
     //myManta.Connect();
     // initialized, we can switch our flag used to prevent unsafe access
     // in the attribute setters (below)
-
+      metro.delay(200.0);
     m_initialized = true;
 
   }
@@ -602,43 +622,26 @@ MIN_FUNCTION
   outlet<> frame_outlet	{ this, "(list) processed data output" };
 
 
-  timer<> metro { this,
-        MIN_FUNCTION {
-          if (pollTimerOn) {
 
-            //cout << "hi" << c74::min::endl;
-            PollConnectedMantas();
-            metro.delay(2.0);
-          }
-          return {};
-        }
-  };
   argument<number> greeting_arg { this, "serial number", "Manta serial number to look for (if you are using multiple mantas)",
           MIN_ARGUMENT_FUNCTION {
             inputArg = arg;
           }
     };
-  message<> bang { this, "bang", "coolest output",
-
-
-    MIN_FUNCTION {
-      int worked =1;
-      pad_velocity_outlet.send(pollTimerOn);
-      if (ConnectedManta != NULL)
-      {
-        pad_and_button_continuous_outlet.send(ConnectedManta->IsConnected());
-        slider_outlet.send(ConnectedManta->GetSerialNumber());
-      }
-      // output.send(worked);
-      return {};
-    }
-
-};
+  
 
   message<> connect { this, "connect", "connect to manta",
 
     MIN_FUNCTION {
-      Attach(inputArg);
+        if (args.size())
+        {
+            Attach((int)args[0]);
+        }
+        else
+        {
+            Attach(inputArg);
+        }
+     
 
       return {};
     }
