@@ -1,64 +1,13 @@
-# ninja log v5
-6242	6465	1721184938430484424	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/min.manta.mxo/Contents/MacOS/min.manta	8bfeaac1f2174392
-38	6242	1721184938187533733	source/projects/min.manta/CMakeFiles/min.manta.dir/min.manta.cpp.o	bd0b414254d58f4
-16	920	1721166358106131366	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaUSB.cpp.o	c43bc48edcaea2c7
-16	854	1721166358038028744	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaMulti.cpp.o	46caab580550b008
-16	874	1721166358059917814	source/projects/min.manta/CMakeFiles/min.manta.dir/Manta.cpp.o	3a39e418e0ad1370
-521	564	1721166357706039045	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.dylib	267725e4a0d6a78
-521	564	1721166357706039045	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.dylib	267725e4a0d6a78
-400	520	1721166357706039045	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.14.0.dylib	bd88a75b6718356
-16	400	1721166357584352705	source/projects/min.manta/hidapi/src/mac/CMakeFiles/hidapi_darwin.dir/hid.c.o	23e966238711e926
-8	24	0	clean	e625fed40095271c
-5	17	0	clean	e625fed40095271c
-13	964	1721245470554515840	source/projects/min.manta/hidapi/src/mac/CMakeFiles/hidapi_darwin.dir/hid.c.o	23e966238711e926
-964	1148	1721245470743786422	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.14.0.dylib	bd88a75b6718356
-1148	1182	1721245470743786422	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.dylib	267725e4a0d6a78
-1148	1182	1721245470743786422	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.dylib	267725e4a0d6a78
-12	1302	1721245470895687081	source/projects/min.manta/CMakeFiles/min.manta.dir/Manta.cpp.o	3a39e418e0ad1370
-12	1321	1721245470913997347	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaMulti.cpp.o	46caab580550b008
-13	1391	1721245470982021588	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaUSB.cpp.o	c43bc48edcaea2c7
-12	5713	1721245475289429699	source/projects/min.manta/CMakeFiles/min.manta.dir/min.manta.cpp.o	bd0b414254d58f4
-5713	5923	1721245475513899580	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/min.manta.mxo/Contents/MacOS/min.manta	8bfeaac1f2174392
-5	16	0	clean	e625fed40095271c
-15	359	1721245500636433668	source/projects/min.manta/hidapi/src/mac/CMakeFiles/hidapi_darwin.dir/hid.c.o	23e966238711e926
-359	480	1721245500760314525	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.14.0.dylib	bd88a75b6718356
-480	511	1721245500760314525	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.dylib	267725e4a0d6a78
-480	511	1721245500760314525	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.dylib	267725e4a0d6a78
-14	762	1721245501038965466	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaMulti.cpp.o	46caab580550b008
-14	777	1721245501052451770	source/projects/min.manta/CMakeFiles/min.manta.dir/Manta.cpp.o	3a39e418e0ad1370
-15	818	1721245501097372004	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaUSB.cpp.o	c43bc48edcaea2c7
-14	4695	1721245504954933899	source/projects/min.manta/CMakeFiles/min.manta.dir/min.manta.cpp.o	bd0b414254d58f4
-4696	4875	1721245505153380239	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/min.manta.mxo/Contents/MacOS/min.manta	8bfeaac1f2174392
-6	19	0	clean	e625fed40095271c
-17	408	1721245696834203665	source/projects/min.manta/hidapi/src/mac/CMakeFiles/hidapi_darwin.dir/hid.c.o	23e966238711e926
-408	545	1721245696972663780	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.14.0.dylib	bd88a75b6718356
-545	572	1721245696972663780	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.dylib	267725e4a0d6a78
-545	572	1721245696972663780	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.dylib	267725e4a0d6a78
-16	770	1721245697193704346	source/projects/min.manta/CMakeFiles/min.manta.dir/Manta.cpp.o	3a39e418e0ad1370
-16	792	1721245697216731687	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaMulti.cpp.o	46caab580550b008
-17	850	1721245697274056703	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaUSB.cpp.o	c43bc48edcaea2c7
-16	4713	1721245701119544346	source/projects/min.manta/CMakeFiles/min.manta.dir/min.manta.cpp.o	bd0b414254d58f4
-4713	4916	1721245701340796490	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/min.manta.mxo/Contents/MacOS/min.manta	8bfeaac1f2174392
-5	14	0	clean	e625fed40095271c
-18	361	1721245735868622948	source/projects/min.manta/hidapi/src/mac/CMakeFiles/hidapi_darwin.dir/hid.c.o	23e966238711e926
-361	471	1721245735972612773	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.14.0.dylib	bd88a75b6718356
-471	498	1721245735972612773	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.dylib	267725e4a0d6a78
-471	498	1721245735972612773	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.dylib	267725e4a0d6a78
-17	723	1721245736228572736	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaMulti.cpp.o	46caab580550b008
-16	743	1721245736247500687	source/projects/min.manta/CMakeFiles/min.manta.dir/Manta.cpp.o	3a39e418e0ad1370
-17	780	1721245736286252247	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaUSB.cpp.o	c43bc48edcaea2c7
-16	4699	1721245740186485179	source/projects/min.manta/CMakeFiles/min.manta.dir/min.manta.cpp.o	bd0b414254d58f4
-4699	4911	1721245740412994252	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/min.manta.mxo/Contents/MacOS/min.manta	8bfeaac1f2174392
-29	8296	1721506271470830566	source/projects/min.manta/CMakeFiles/min.manta.dir/min.manta.cpp.o	bd0b414254d58f4
-8296	8896	1721506272103659337	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/min.manta.mxo/Contents/MacOS/min.manta	8bfeaac1f2174392
-27	6128	1721506723408698663	source/projects/min.manta/CMakeFiles/min.manta.dir/min.manta.cpp.o	bd0b414254d58f4
-6128	6380	1721506723690428424	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/min.manta.mxo/Contents/MacOS/min.manta	8bfeaac1f2174392
-26	412	1721526340079227826	source/projects/min.manta/hidapi/src/mac/CMakeFiles/hidapi_darwin.dir/hid.c.o	23e966238711e926
-412	526	1721526340194846926	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.14.0.dylib	bd88a75b6718356
-526	555	1721526340194846926	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.0.dylib	267725e4a0d6a78
-526	555	1721526340194846926	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/libhidapi.dylib	267725e4a0d6a78
-25	724	1721526340389351522	source/projects/min.manta/CMakeFiles/min.manta.dir/Manta.cpp.o	3a39e418e0ad1370
-25	731	1721526340397454747	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaMulti.cpp.o	46caab580550b008
-25	780	1721526340445319483	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaUSB.cpp.o	c43bc48edcaea2c7
-24	5053	1721526344697432207	source/projects/min.manta/CMakeFiles/min.manta.dir/min.manta.cpp.o	bd0b414254d58f4
-5053	5238	1721526344903664162	/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/min.manta.mxo/Contents/MacOS/min.manta	8bfeaac1f2174392
+# ninja log v6
+5	557	1721671956840157824	source/projects/min.manta/hidapi/src/mac/CMakeFiles/hidapi_darwin.dir/hid.c.o	1b7e9f244c9f71b8
+6	925	1721671956840706453	source/projects/min.manta/CMakeFiles/min.manta.dir/Manta.cpp.o	a4880a6c2f57b5b3
+20	377	1721677559296984026	/Users/dp9443/Documents/Max 8/Packages/manta-devkit/externals/libhidapi.0.14.0.dylib	3a7da71c9646e8b2
+6	935	1721671956840879497	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaMulti.cpp.o	4581f005124acad1
+377	385	1721677559653767992	/Users/dp9443/Documents/Max 8/Packages/manta-devkit/externals/libhidapi.dylib	8a083235d926ca84
+377	385	1721677559653767992	/Users/dp9443/Documents/Max 8/Packages/manta-devkit/externals/libhidapi.0.dylib	8a083235d926ca84
+6	4781	1721671956840529077	source/projects/min.manta/CMakeFiles/min.manta.dir/min.manta.cpp.o	8923d6a4933c3f3f
+385	525	1721677559662193513	/Users/dp9443/Documents/Max 8/Packages/manta-devkit/externals/min.manta.mxo/Contents/MacOS/min.manta	ab70adbbc0923d39
+6	968	1721671956841058665	source/projects/min.manta/CMakeFiles/min.manta.dir/MantaUSB.cpp.o	d2300db75b5df718
+12	473	1721677879246641990	source/projects/min.manta/hidapi/src/mac/CMakeFiles/hidapi_darwin.dir/hid.c.o	95361ddf3e7e3200
+473	564	1721677879706893622	source/projects/min.manta/hidapi/src/mac/libhidapi.a	2af877a8ef2ee42b
+564	790	1721677879798352024	/Users/dp9443/Documents/Max 8/Packages/manta-devkit/externals/min.manta.mxo/Contents/MacOS/min.manta	360caa42d3b816e8
