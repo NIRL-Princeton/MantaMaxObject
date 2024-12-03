@@ -37,7 +37,7 @@ add_library(
 )
 
 
-target_link_libraries(${PROJECT_NAME} PRIVATE hidapi::hidapi)
+target_link_libraries(${PROJECT_NAME}  PUBLIC hidapi::hidapi)
 
 
 include(${C74_MIN_API_DIR}/script/min-posttarget.cmake)
@@ -48,3 +48,4 @@ include(${C74_MIN_API_DIR}/script/min-posttarget.cmake)
 #############################################################
 
 include(${C74_MIN_API_DIR}/test/min-object-unittest.cmake)
+target_link_libraries(${TEST_NAME} PUBLIC hidapi::hidapi)
