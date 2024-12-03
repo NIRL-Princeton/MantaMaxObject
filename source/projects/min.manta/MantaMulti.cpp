@@ -81,11 +81,15 @@ void MantaMulti::ButtonVelocityEvent(int id, int velocity)
 
 void MantaMulti::FrameEvent(uint8_t *frame)
 {
-   for(list<MantaClient *>::iterator i = ClientList.begin();
-         i != ClientList.end(); ++i)
-   {
-      (*i)->FrameEvent(frame);
-   }
+    for (auto i : ClientList)
+    {
+        i->FrameEvent(frame);
+    }
+//   for(list<MantaClient *>::iterator i = ClientList.begin();
+//         i != ClientList.end(); ++i)
+//   {
+//      i->FrameEvent(frame);
+//   }
 }
 
 /*

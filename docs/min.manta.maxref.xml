@@ -54,6 +54,11 @@
 			<description>set slider led with bitmask </description>
 		</method>
 
+		<method name='ledframe'>
+			<digest>send a full led frame message</digest>
+			<description>send a full led frame message. </description>
+		</method>
+
 		<method name='reset'>
 			<digest>recalibrate manta </digest>
 			<description>recalibrate manta </description>

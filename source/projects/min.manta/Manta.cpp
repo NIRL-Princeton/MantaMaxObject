@@ -8,7 +8,7 @@
  *
  * The Constructor for the Manta class just initializes internal data
  ****************************************************************************/
-Manta::Manta(void) {
+Manta::Manta() {
    for(int i = 0; i < 53; ++i)
    {
       LastInReport[i] = 0;
@@ -304,6 +304,31 @@ void Manta::SetPadLEDFrame(LEDState state, LEDFrame mask)
       default:
          throw std::invalid_argument("Invalid state");
    }
+   if(IsConnected())
+   {
+      WriteFrame(CurrentOutReport, false);
+   }
+}
+
+/************************************************************************//**
+ * \brief   Sets all the LEDs at the same time using the native manta frame format
+
+ * \param   mask     A 16-byte mask representing all the pads. The first byte
+ *                   is the bottom row, and the lsb is the leftmost LED.
+ *
+ ****************************************************************************/
+void Manta::SetAllLEDFrame(fullLEDFrame mask)
+{
+    for (int i= 0; i < 9; i++)
+    {
+        CurrentOutReport[i] = mask[i];
+    }
+    //skip the configuration byte
+    //now the red leds
+    for (int i= 10; i < 16; i++)
+    {
+        CurrentOutReport[i] = mask[i];
+    }
    if(IsConnected())
    {
       WriteFrame(CurrentOutReport, false);

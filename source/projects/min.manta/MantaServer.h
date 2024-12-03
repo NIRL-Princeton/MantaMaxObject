@@ -26,6 +26,7 @@ class MantaServer
       Button
    };
    typedef uint8_t LEDFrame[6];
+    typedef uint8_t fullLEDFrame[16];
 
    virtual ~MantaServer() {}
    /* declare callbacks to be implemented by subclasses */
@@ -33,6 +34,7 @@ class MantaServer
    virtual void SetPadLEDRow(LEDState state, int row, uint8_t mask) = 0;
    virtual void SetPadLEDColumn(LEDState state, int column, uint8_t mask) = 0;
    virtual void SetPadLEDFrame(LEDState state, uint8_t mask[]) = 0;
+    virtual void SetAllLEDFrame(uint8_t mask[]) = 0;
    virtual void SetSliderLED(LEDState state, int id, uint8_t mask) = 0;
    virtual void SetButtonLED(LEDState state, int id) = 0;
    virtual void ResendLEDState(void) = 0;

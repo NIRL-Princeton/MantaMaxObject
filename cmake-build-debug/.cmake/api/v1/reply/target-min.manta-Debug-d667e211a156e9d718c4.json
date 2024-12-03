@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/externals/min.manta.mxo/Contents/MacOS/min.manta"
+			"path" : "/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/externals/min.manta.mxo/Contents/MacOS/min.manta"
 		}
 	],
 	"backtrace" : 1,
@@ -102,7 +102,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17 -arch x86_64 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=10.11 -fPIC -fcolor-diagnostics"
+					"fragment" : "-g -std=gnu++17 -arch x86_64 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -mmacosx-version-min=10.11 -fPIC -fcolor-diagnostics"
 				}
 			],
 			"defines" : 
@@ -122,41 +122,41 @@
 			"frameworks" : 
 			[
 				{
-					"path" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/max-sdk-base/c74support/msp-includes/MaxAudioAPI.framework"
+					"path" : "/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/min-api/max-sdk-base/c74support/msp-includes/MaxAudioAPI.framework"
 				},
 				{
-					"path" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/max-sdk-base/c74support/jit-includes/JitterAPI.framework"
+					"path" : "/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/min-api/max-sdk-base/c74support/jit-includes/JitterAPI.framework"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 9,
-					"path" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/max-sdk-base/script/../c74support/max-includes"
+					"path" : "/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/min-api/max-sdk-base/script/../c74support/max-includes"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/max-sdk-base/script/../c74support/msp-includes"
+					"path" : "/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/min-api/max-sdk-base/script/../c74support/msp-includes"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/max-sdk-base/script/../c74support/jit-includes"
+					"path" : "/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/min-api/max-sdk-base/script/../c74support/jit-includes"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/max-sdk-base/script/../c74support/max-includes/.."
+					"path" : "/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/min-api/max-sdk-base/script/../c74support/max-includes/.."
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/script/../include"
+					"path" : "/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/min-api/script/../include"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/projects/min.manta/hidapi/hidapi"
+					"path" : "/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/projects/min.manta/hidapi/hidapi"
 				},
 				{
 					"backtrace" : 2,
-					"path" : "/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/projects/min.manta/hidapi/mac"
+					"path" : "/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/projects/min.manta/hidapi/mac"
 				}
 			],
 			"language" : "CXX",
@@ -194,7 +194,7 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-F\"/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/max-sdk-base/c74support/msp-includes\" -F\"/Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-api/max-sdk-base/c74support/jit-includes\"",
+				"fragment" : "-F\"/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/min-api/max-sdk-base/c74support/msp-includes\" -F\"/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/min-api/max-sdk-base/c74support/jit-includes\"",
 				"role" : "frameworkPath"
 			},
 			{

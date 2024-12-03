@@ -36,6 +36,7 @@ class Manta :
       virtual void SetPadLEDRow(LEDState state, int row, uint8_t mask);
       virtual void SetPadLEDColumn(LEDState state, int column, uint8_t mask);
       virtual void SetPadLEDFrame(LEDState state, uint8_t mask[]);
+      virtual void SetAllLEDFrame(uint8_t mask[]);
       virtual void SetSliderLED(LEDState state, int id, uint8_t mask);
       virtual void SetButtonLED(LEDState state, int id);
       virtual void ResendLEDState(void);

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/min-lib
+# Install script for directory: /Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/min-lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,19 +35,5 @@ endif()
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/Easing/cmake_install.cmake")
-  include("/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/allpass/cmake_install.cmake")
-  include("/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/circular_storage/cmake_install.cmake")
-  include("/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/dcblocker/cmake_install.cmake")
-  include("/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/delay/cmake_install.cmake")
-  include("/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/generator/cmake_install.cmake")
-  include("/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/interpolator/cmake_install.cmake")
-  include("/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/onepole/cmake_install.cmake")
-  include("/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/min-lib/test/oscillator/cmake_install.cmake")
-
 endif()
 

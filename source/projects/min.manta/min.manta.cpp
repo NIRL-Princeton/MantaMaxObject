@@ -42,6 +42,7 @@ private:
   static list<manta *> listOfMantaObjects;
   int lastSliderValue[2];
   int pollTimerOn;
+    std::mutex myLilMutex;
   c74::max::t_symbol  *padSymbol;
   c74::max::t_symbol  *buttonSymbol;
    c74::max::t_symbol *sliderSymbol;
@@ -52,11 +53,12 @@ private:
    c74::max::t_symbol *rowSymbol;
    c74::max::t_symbol *columnSymbol;
    c74::max::t_symbol *frameSymbol;
+    c74::max::t_symbol *ledframeSymbol;
    c74::max::t_symbol *padAndButtonSymbol;
-   c74::max::t_symbol *ledsOffSymbol;
-    mutex mtx;
-public:
 
+    c74::max::t_symbol *ledFrame;
+public:
+   c74::max::t_symbol *ledsOffSymbol;
   MIN_DESCRIPTION	{ "Snyderphonics Manta Object" };
   MIN_TAGS		{ "control" };
   MIN_AUTHOR		{ "Jeff Snyder and Spencer Russell" };
@@ -64,7 +66,7 @@ public:
   //Manta myManta;
 void PollConnectedMantas()
   {
-    mtx.lock();
+    myLilMutex.lock();
     try
     {
       MantaUSB::HandleEvents();
@@ -84,13 +86,14 @@ void PollConnectedMantas()
         }
 
     }
-    mtx.unlock();
+    myLilMutex.unlock();
   }
 
   void Detach()
   {
     //cout << "detach called" << c74::min::endl;
       errorHappened = 1;
+      pollTimerOn = 0;
     if(Attached())
     {
       cout << "manta: Detaching from manta " << ConnectedManta->GetSerialNumber() << c74::min::endl;
@@ -126,35 +129,35 @@ void PollConnectedMantas()
   }
 
   void Attach(int serialNumber){
-    if(!Attached())
+     // cout<< "attavching?" << c74::min::endl;
+     if(!Attached())
     {
 
       MantaMulti *device = FindConnectedMantaBySerial(serialNumber);
       /* see if the device is already in the connected list */
       //cout << "ifnotattached " << ConnectedMantaList.size() << c74::min::endl;
-      if(NULL != device)
+      if(device != NULL)
       {
         cout << "manta: Attaching to manta " << device->GetSerialNumber() << c74::min::endl;
         device->AttachClient(this);
-          device->ResendLEDState();
+          //device->ResendLEDState();
         ConnectedManta = device;
         //cout << "beforepush1 " << ConnectedMantaList.size() << c74::min::endl;
         ConnectedMantaList.push_back(ConnectedManta);
         //cout << "afterpush1 " << ConnectedMantaList.size() << c74::min::endl;
-      }
-      else {
+      } else {
         /* TODO: open by serial number */
-        device = new MantaMulti;
+        device = new MantaMulti();
         try
         {
           device->Connect(serialNumber);
           cout << "manta: Connected to manta "<< device->GetSerialNumber() << c74::min::endl;
           device->AttachClient(this);
-          device->ResendLEDState();
+          //device->ResendLEDState();
           ConnectedManta = device;
-         // cout << "beforepush2 " << ConnectedMantaList.size() << c74::min::endl;
+          //cout << "beforepush2 " << ConnectedMantaList.size() << c74::min::endl;
           ConnectedMantaList.push_back(ConnectedManta);
-         // cout << "afterpush2 " << ConnectedMantaList.size() << c74::min::endl;
+          //cout << "afterpush2 " << ConnectedMantaList.size() << c74::min::endl;
         }
         catch(MantaNotFoundException e)
         {
@@ -318,23 +321,44 @@ MantaServer::LEDState ledStateFromInt(int state)
        {
          if(control == padAndButtonSymbol)
          {
+           myLilMutex.lock();
            if(0 == state)
            {
-             ConnectedManta->ClearPadAndButtonLEDs();
+               if(Attached())
+               {
+                   ConnectedManta->ClearPadAndButtonLEDs();
+               }
            }
-           ConnectedManta->SetLEDControl(MantaServer::PadAndButton, state);
+             if(Attached())
+             {
+                 ConnectedManta->SetLEDControl(MantaServer::PadAndButton, state);
+             }
+           myLilMutex.unlock();
          }
          else if(control == sliderSymbol)
          {
-           ConnectedManta->SetLEDControl(MantaServer::Slider, state);
+             myLilMutex.lock();
+             if(Attached())
+             {
+                 ConnectedManta->SetLEDControl(MantaServer::Slider, state);
+             }
+             myLilMutex.unlock();
          }
          else if(control == buttonSymbol)
          {
-           if(0 == state)
+             myLilMutex.lock();
+             if(0 == state)
            {
-             ConnectedManta->ClearButtonLEDs();
+               if(Attached())
+               {
+                   ConnectedManta->ClearButtonLEDs();
+               }
            }
-           ConnectedManta->SetLEDControl(MantaServer::Button, state);
+             if(Attached())
+             {
+                 ConnectedManta->SetLEDControl(MantaServer::Button, state);
+             }
+             myLilMutex.unlock();
          }
        }
        return {};
@@ -360,15 +384,20 @@ MantaServer::LEDState ledStateFromInt(int state)
         {
           parsedState = ledStateFromInt((args[0]));
         }
-
+          myLilMutex.lock();
         for(int i = 1; i < args.size(); ++i)
         {
             int padNumber =(int)args[i] - (OneIndexed ? 1 : 0);
             if ((padNumber >= 0) && (padNumber < 48))
             {
-                ConnectedManta->SetPadLED(parsedState, padNumber);
+                if(Attached())
+                {
+                    ConnectedManta->SetPadLED(parsedState, padNumber);
+                }
+
             }
         }
+          myLilMutex.unlock();
       }
       return {};
     }
@@ -393,7 +422,12 @@ MantaServer::LEDState ledStateFromInt(int state)
         int rowNumber =(int)args[1]- (OneIndexed ? 1 : 0);
         if ((rowNumber >= 0) && (rowNumber < 6))
         {
-            ConnectedManta->SetPadLEDRow(parsedState, rowNumber, (int)args[2]);
+            myLilMutex.lock();
+            if(Attached())
+            {
+                ConnectedManta->SetPadLEDRow(parsedState, rowNumber, (int)args[2]);
+            }
+            myLilMutex.unlock();
         }
     }
     return {};
@@ -417,7 +451,12 @@ MantaServer::LEDState ledStateFromInt(int state)
         int columnNumber =(int)args[1] - (OneIndexed ? 1 : 0);
         if ((columnNumber >= 0) && (columnNumber < 8))
         {
-            ConnectedManta->SetPadLEDColumn(parsedState, columnNumber, (int)args[2]);
+            myLilMutex.lock();
+            if(Attached())
+            {
+                ConnectedManta->SetPadLEDColumn(parsedState, columnNumber, (int)args[2]);
+            }
+            myLilMutex.unlock();
         }
       
 
@@ -442,7 +481,12 @@ MantaServer::LEDState ledStateFromInt(int state)
          int LEDindex = (int)args[1] - (OneIndexed ? 1 : 0);
          if ((LEDindex >= 0) && (LEDindex < 2))
          {
-             ConnectedManta->SetSliderLED(parsedState, LEDindex, (int)args[2]);
+             myLilMutex.lock();
+             if(Attached())
+             {
+                 ConnectedManta->SetSliderLED(parsedState, LEDindex, (int)args[2]);
+             }
+             myLilMutex.unlock();
          }
      }
      return {};
@@ -461,23 +505,31 @@ MantaServer::LEDState ledStateFromInt(int state)
             id -= 1;
             ledNum -= 1;
          }
+           myLilMutex.lock();
          if(ledNum >= 0 && ledNum < 8)
          {
             uint8_t mask = 0x80 >> ledNum;
-            ConnectedManta->SetSliderLED(MantaServer::Amber, id, mask);
-            ConnectedManta->SetSliderLED(MantaServer::Off, id, ~mask);
+             if(Attached())
+             {
+                 ConnectedManta->SetSliderLED(MantaServer::Amber, id, mask);
+                 ConnectedManta->SetSliderLED(MantaServer::Off, id, ~mask);
+             }
          }
          else if(ledNum == -1)
          {
-            ConnectedManta->SetSliderLED(MantaServer::Off, id, 0xFF);
+             if(Attached())
+             {
+                 ConnectedManta->SetSliderLED(MantaServer::Off, id, 0xFF);
+             }
          }
+           myLilMutex.unlock();
        }
        return {};
      }
   };
 
 
-  message<> buttonled { this, "button", "set button led",
+  message<> c { this, "button", "set button led",
     MIN_FUNCTION
     {
       if(Attached()) {
@@ -491,15 +543,19 @@ MantaServer::LEDState ledStateFromInt(int state)
         {
           parsedState = ledStateFromInt((args[0]));
         }
-
+          myLilMutex.lock();
         for(int i = 1; i < args.size(); ++i)
         {
             int buttonNumber =(int)args[i] - (OneIndexed ? 1 : 0);
             if ((buttonNumber >= 0) && (buttonNumber < 4))
             {
-                ConnectedManta->SetButtonLED(parsedState,buttonNumber);
+                if(Attached())
+                {
+                    ConnectedManta->SetButtonLED(parsedState,buttonNumber);
+                }
             }
         }
+          myLilMutex.unlock();
       }
       return {};
     }
@@ -509,7 +565,12 @@ MantaServer::LEDState ledStateFromInt(int state)
      MIN_FUNCTION
      {
        if(Attached()) {
-         ConnectedManta->Recalibrate();
+           myLilMutex.lock();
+           if(Attached())
+           {
+               ConnectedManta->Recalibrate();
+           }
+           myLilMutex.unlock();
        }
        return {};
      }
@@ -519,11 +580,36 @@ MantaServer::LEDState ledStateFromInt(int state)
    MIN_FUNCTION
    {
      if(Attached()) {
-       ConnectedManta->ClearPadAndButtonLEDs();
+         myLilMutex.lock();
+         if(Attached())
+         {
+             ConnectedManta->ClearPadAndButtonLEDs();
+         }
+         myLilMutex.unlock();
      }
      return {};
    }
   };
+    
+    message<> ledframe { this, "ledframe", "send a full led frame message. ",
+     MIN_FUNCTION
+     {
+        
+        myLilMutex.lock();
+        uint8_t frameArray[16];
+        for(int i = 0; i < args.size(); ++i)
+        {
+           frameArray[i] = (int)args[i];
+        }
+        if(Attached())
+        {
+            ConnectedManta->SetAllLEDFrame(frameArray);
+        }
+        myLilMutex.unlock();
+       
+       return {};
+     }
+    };
 
   message<> setturbomode { this, "turbo", "turn on/off turbo mode (scan only the bottom 16 sensors but much faster)",
  MIN_FUNCTION
@@ -574,6 +660,7 @@ MIN_FUNCTION
     };
   manta(const atoms& args = {}):ConnectedManta(NULL),OneIndexed(false), pollTimerOn(0)
   {
+     // cout << "constructor called " << c74::min::endl;
   padSymbol = c74::max::gensym("pad");
   sliderSymbol = c74::max::gensym("slider");
   sliderMaskSymbol = c74::max::gensym("slidermask");
@@ -584,22 +671,13 @@ MIN_FUNCTION
   rowSymbol = c74::max::gensym("row");
   columnSymbol = c74::max::gensym("column");
   frameSymbol = c74::max::gensym("frame");
+  ledframeSymbol = c74::max::gensym("ledframe");
   padAndButtonSymbol = c74::max::gensym("padandbutton");
   ledsOffSymbol = c74::max::gensym("ledsoff");
     inputArg = args[0];
       errorHappened = 0;
     listOfMantaObjects.push_back(this);
-    //cout << "trying Serial Number" << inputArg << c74::min::endl;
-//    if(!args.empty())
-//    {
-//      Attach(inputArg);
-//
-//    }
-//    else
-//    {
-//      Attach(0);
-//    }
-
+    
     //myManta.Connect();
     // initialized, we can switch our flag used to prevent unsafe access
     // in the attribute setters (below)
@@ -609,10 +687,14 @@ MIN_FUNCTION
   }
 
   ~manta() override {
+      //cout << "destructor called" << c74::min::endl;
     if (m_initialized)
     {
+    myLilMutex.lock();
+   
       Detach();
       listOfMantaObjects.remove(this);
+    myLilMutex.unlock();
     }
   }
 
@@ -631,6 +713,30 @@ MIN_FUNCTION
     };
   
 
+    
+    message<> setup { this, "setup",
+        MIN_FUNCTION {
+            c74::max::t_class* c = args[0];
+            
+            
+            int amIDumb = dummy();
+            
+            if (!amIDumb)
+            {
+                //
+                //cout << "trying Serial Number" << inputArg << c74::min::endl;
+                  myLilMutex.lock();
+
+                  Attach(inputArg);
+
+                
+                  myLilMutex.unlock();
+            }
+            
+
+            return {};
+        }
+    };
   message<> connect { this, "connect", "connect to manta",
 
     MIN_FUNCTION {

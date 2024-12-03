@@ -1,4 +1,4 @@
-# Install script for directory: /Users/dp9443/Documents/Max 8/Packages/manta-devkit/source/projects/min.manta
+# Install script for directory: /Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/source/projects/min.manta
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/dp9443/Documents/Max 8/Packages/manta-devkit/cmake-build-debug/source/projects/min.manta/hidapi/cmake_install.cmake")
+  include("/Users/jeffsnyder/Documents/Max 8/Packages/MantaMaxObject/cmake-build-debug/source/projects/min.manta/hidapi/cmake_install.cmake")
 
 endif()
 
