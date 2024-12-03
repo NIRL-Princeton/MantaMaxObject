@@ -31,6 +31,7 @@ private:
   //MantaServer::LEDState ledStateFromSymbol(const t_symbol *stateSymbol);
   //MantaServer::LEDState ledStateFromInt(int stateSymbol);
   MantaMulti *ConnectedManta;
+    int my_index =0;
   bool OneIndexed;
   int inputArg;
     int errorHappened;
@@ -69,7 +70,7 @@ void PollConnectedMantas()
     myLilMutex.lock();
     try
     {
-      MantaUSB::HandleEvents();
+      ConnectedManta->HandleEvents();
       //cout << "polling " << c74::min::endl;
     }
     catch(MantaCommunicationException e)
@@ -143,6 +144,7 @@ void PollConnectedMantas()
           //device->ResendLEDState();
         ConnectedManta = device;
         //cout << "beforepush1 " << ConnectedMantaList.size() << c74::min::endl;
+         my_index = ConnectedMantaList.size();
         ConnectedMantaList.push_back(ConnectedManta);
         //cout << "afterpush1 " << ConnectedMantaList.size() << c74::min::endl;
       } else {

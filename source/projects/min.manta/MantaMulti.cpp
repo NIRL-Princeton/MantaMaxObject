@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cstdarg>
 #include <cstdio>
+#include <iostream>
 
 MantaMulti::MantaMulti(MantaClient *client) :
    ReferenceCount(0)
@@ -92,7 +93,7 @@ void MantaMulti::FrameEvent(uint8_t *frame)
 //   }
 }
 
-/*
+
 void MantaMulti::DebugPrint(const char *fmt, ...)
 {
    if(!ClientList.empty())
@@ -103,7 +104,9 @@ void MantaMulti::DebugPrint(const char *fmt, ...)
       vsprintf(string, fmt, args);
       va_end (args);
       ClientList.front()->DebugPrint(string);
+    std::cout << string << std::endl;
    }
+    
 }
-*/
+
 
