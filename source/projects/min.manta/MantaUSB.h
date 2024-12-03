@@ -25,6 +25,7 @@ typedef struct hid_device_ hid_device;
  * the low-level USB drivers by periodically calling the HandleEvents()
  * function.
  ****************************************************************************/
+class MantaMulti;
 class MantaUSB
 {
    public:
@@ -38,8 +39,8 @@ class MantaUSB
       int GetHardwareVersion(void);
       bool MessageQueued(void);
 
-      static void HandleEvents(void);
-
+       void HandleEvents(void);
+     void HandleEvents(int index, MantaMulti * connectedManta);
    protected:
       virtual void FrameReceived(int8_t *frame) = 0;
       virtual void DebugPrint(const char *fmt, ...) {}
@@ -67,7 +68,7 @@ class MantaUSB
       hid_device *DeviceHandle;
 
       static list<MantaUSB *> mantaList;
-      static list<MantaTxQueueEntry *> txQueue;
+      list<MantaTxQueueEntry *> txQueue;
 };
 
 #endif // _MANTAUSB_H

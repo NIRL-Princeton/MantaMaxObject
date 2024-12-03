@@ -5,7 +5,8 @@
 #include <cstdlib>
 #include <cstring>
 #include <wchar.h>
-
+#include "MantaMulti.h"
+#include <iostream>
 MantaUSB::MantaUSB(void) :
    SerialNumber(0),
    DeviceHandle(NULL)
@@ -216,6 +217,68 @@ void MantaUSB::HandleEvents(void)
    }
 }
 
+void MantaUSB::HandleEvents(int i, MantaMulti* connectedManta)
+{
+   auto element = mantaList.begin();
+    std::advance(element, i);
+    
+   if (mantaList.end() != element)
+   {
+      MantaUSB *current = *element;
+      if(current->IsConnected())
+      {
+         int bytesRead;
+         int8_t inFrame[InPacketLen];
+
+         bytesRead = hid_read(current->DeviceHandle,
+               reinterpret_cast<uint8_t *>(inFrame), InPacketLen);
+         if(bytesRead < 0)
+         {
+            current->DebugPrint("%s-%d: Read error on Manta %d",
+                  __FILE__, __LINE__, current->GetSerialNumber());
+            throw(MantaCommunicationException(current));
+         }
+         else if(bytesRead)
+         {
+            current->FrameReceived(inFrame);
+         }
+      }
+      ++i;
+   }
+
+   /* pop one item off the transmit queue and send down to its target */
+   if(! txQueue.empty())
+   {
+    
+      int bytesWritten;
+      MantaTxQueueEntry *txMessage = txQueue.front();
+       if(txQueue.size() == 0)
+           return;
+       if( txMessage->TargetManta != connectedManta )
+           return;
+      txQueue.pop_front();
+      bytesWritten = hid_write(txMessage->TargetManta->DeviceHandle,
+            txMessage->OutFrame, OutPacketLen + 1);
+      txMessage->TargetManta->DebugPrint("%s-%d: Frame Written to Manta %d",
+            __FILE__, __LINE__, txMessage->TargetManta->GetSerialNumber());
+      for(int i = 0; i < 16; i += 8)
+      {
+         uint8_t *frame = txMessage->OutFrame + 1;
+         txMessage->TargetManta->DebugPrint("\t\t%x %x %x %x %x %x %x %x",
+               frame[i], frame[i+1], frame[i+2], frame[i+3], frame[i+4],
+               frame[i+5], frame[i+6], frame[i+7]);
+      }
+
+      if(bytesWritten < 0)
+      {
+         txMessage->TargetManta->DebugPrint("%s-%d: Write error on Manta",
+               __FILE__, __LINE__);
+         throw(MantaCommunicationException(txMessage->TargetManta));
+      }
+       delete txMessage;
+   }
+}
+
 /************************************************************************//**
  * \brief   Queries the serial number of the attached Manta
  *
@@ -240,9 +303,11 @@ MantaUSB::MantaTxQueueEntry *MantaUSB::GetQueuedTxMessage()
 {
    list<MantaTxQueueEntry *>::iterator i = txQueue.begin();
    /* look for the first queued message matching this manta */
+    
    while(txQueue.end() != i)
    {
-      if((*i)->TargetManta == this)
+       //std::cout << "my serial " << SerialNumber << " message serial" << (*i)->TargetManta->SerialNumber << std::endl;
+      if( (*i)->TargetManta == this)
       {
          return *i;
       }
@@ -253,4 +318,4 @@ MantaUSB::MantaTxQueueEntry *MantaUSB::GetQueuedTxMessage()
 
 /* define static class members */
 list<MantaUSB *> MantaUSB::mantaList;
-list<MantaUSB::MantaTxQueueEntry *> MantaUSB::txQueue;
+//list<MantaUSB::MantaTxQueueEntry *> MantaUSB::txQueue;
