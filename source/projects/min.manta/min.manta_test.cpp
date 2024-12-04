@@ -14,11 +14,12 @@ SCENARIO("object produces correct output") {
 	std::cout << "constructor called " << c74::min::endl;
 	ext_main(nullptr);    // every unit test must call ext_main() once to configure the class
 
+	std::cout << " ext_main" << c74::min::endl;
 	GIVEN("An instance of minmanta") {
-
-		// test_wrapper<manta> an_instance;
-		// manta&              my_object = an_instance;
-
+		std::cout << " GIVEN" << c74::min::endl;
+		test_wrapper<manta> an_instance;
+		manta&              my_object = an_instance;
+		std::cout << " ERE" << c74::min::endl;
 		// check that default attr values are correct
 		REQUIRE(1 == TRUE);
 		// REQUIRE(my_object.ledsOffSymbol == symbol("ledsoff"));    // note: symbols can be compared with strings
