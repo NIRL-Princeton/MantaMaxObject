@@ -55,65 +55,8 @@ private:
 	c74::max::t_symbol*      frameSymbol;
 	c74::max::t_symbol*      ledframeSymbol;
 	c74::max::t_symbol*      padAndButtonSymbol;
-	// initialized first!
-	// CRITICAL because other member initialization below relies on this value!
-	bool m_initialized {false};
-	// MantaServer::LEDState ledStateFromSymbol(const t_symbol *stateSymbol);
-	// MantaServer::LEDState ledStateFromInt(int stateSymbol);
-	MantaMulti* ConnectedManta;
-	int         my_index = 0;
-	bool        OneIndexed;
-	int         inputArg;
-	int         errorHappened;
-	// static void PollConnectedMantas(void *param);
-	// static MantaMulti *FindConnectedMantaBySerial(int serialNumber);
-	// static void DetachAllMantaFlext(MantaMulti *multi);
-	//! Shared list of all connected mantas
-	static list<MantaMulti*> ConnectedMantaList;
-	static list<manta*>      listOfMantaObjects;
-	int                      lastSliderValue[2];
-	int                      pollTimerOn;
-	std::mutex               myLilMutex;
-	c74::max::t_symbol*      padSymbol;
-	c74::max::t_symbol*      buttonSymbol;
-	c74::max::t_symbol*      sliderSymbol;
-	c74::max::t_symbol*      sliderMaskSymbol;
-	c74::max::t_symbol*      amberSymbol;
-	c74::max::t_symbol*      redSymbol;
-	c74::max::t_symbol*      offSymbol;
-	c74::max::t_symbol*      rowSymbol;
-	c74::max::t_symbol*      columnSymbol;
-	c74::max::t_symbol*      frameSymbol;
-	c74::max::t_symbol*      ledframeSymbol;
-	c74::max::t_symbol*      padAndButtonSymbol;
-
-	c74::max::t_symbol* ledFrame;
-
 public:
-	symbol ledsOffSymbol;
-	MIN_DESCRIPTION {"Snyderphonics Manta Object"};
-	MIN_TAGS {"control"};
-	MIN_AUTHOR {"Jeff Snyder and Spencer Russell"};
-	MIN_RELATED {"hi"};
-	// Manta myManta;
-	void PollConnectedMantas() {
-		myLilMutex.lock();
-		try {
-			MantaUSB::HandleEvents();
-			// cout << "polling " << c74::min::endl;
-		} catch (MantaCommunicationException e) {
-			errorHappened          = 1;
-			MantaMulti* errorManta = static_cast<MantaMulti*>(e.errorManta);
-			cout << "manta: Communication with Manta " << errorManta->GetSerialNumber() << " interrupted" << c74::min::endl;
-			delete errorManta;
-			DetachAllMantaFlext(errorManta);
-			ConnectedMantaList.remove(errorManta);
-			if (ConnectedMantaList.empty()) {
-				pollTimerOn = 0;
-			}
-		}
-		myLilMutex.unlock();
-	}
+	
 	c74::max::t_symbol* ledsOffSymbol;
 	MIN_DESCRIPTION {"Snyderphonics Manta Object"};
 	MIN_TAGS {"control"};
