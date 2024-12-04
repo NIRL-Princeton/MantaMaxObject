@@ -106,16 +106,6 @@ jobs:
       with:
         name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-${{ matrix.config }}
         path: ${{ github.event.repository.name }}
-# - name: Read in .env from CMake # see GitHubENV.cmake
-#       shell: bash
-#       run: |
-#         cat .env # show us the config
-#         cat .env >> $GITHUB_ENV # pull in our PRODUCT_NAME, etc
- - name: Set additional env vars for next steps
-      shell: bash
-      run: |
-        echo "ARTIFACTS_PATH=build/${{ env.PROJECT_NAME }}_artefacts/${{ env.BUILD_TYPE }}" >> $GITHUB_ENV
-        echo "ARTIFACT_NAME=$MantaMAX-${{ matrix.name }}" >> $GITHUB_ENV
 
     - name: Import Certificates (macOS)
       uses: apple-actions/import-codesign-certs@v3 # only exists as a tag right now
