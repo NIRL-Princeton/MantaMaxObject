@@ -96,16 +96,16 @@ void MantaMulti::FrameEvent(uint8_t *frame)
 
 void MantaMulti::DebugPrint(const char *fmt, ...)
 {
-   if(!ClientList.empty())
-   {
-      va_list args;
-      char string[256];
-      va_start(args, fmt);
-      vsprintf(string, fmt, args);
-      va_end (args);
-      ClientList.front()->DebugPrint(string);
-    std::cout << string << std::endl;
-   }
+   // if(!ClientList.empty())
+   // {
+   //    va_list args;
+   //    char string[256];
+   //    va_start(args, fmt);
+   //    vsprintf(string, fmt, args);
+   //    va_end (args);
+   //    ClientList.front()->DebugPrint(string);
+   //  std::cout << string << std::endl;
+   // }
     
 }
 

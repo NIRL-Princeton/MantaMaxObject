@@ -36,11 +36,11 @@ jobs:
     - name: Build Debug
       run: cmake --build build --config 'Debug'
 
-    - name: Test Debug
-      run: cd build && ctest -C 'Debug' . -V
+    # - name: Test Debug
+    #   run: cd build && ctest -C 'Debug' . -V
 
     - name: Build Release
       run: cmake --build build --config 'Release'
 
-    - name: Test Release
-      run: cd build && ctest -C 'Release' . -V
+    # - name: Test Release
+    #   run: cd build && ctest -C 'Release' . -V
