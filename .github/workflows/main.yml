@@ -29,15 +29,17 @@ jobs:
       id: short-sha
       with:
         length: 7
+
     - name: Import Certificates (macOS)
-      uses: apple-actions/import-codesign-certs@v3 # only exists as a tag right now
-      if: matrix.os == 'macos-latest'
+      uses: sudara/basic-macos-keychain-action@1.2.0
+      id: keychain
       with:
-        p12-file-base64: ${{ secrets.BUILD_CERTIFICATES_BASE64 }}
-        p12-password: ${{ secrets.P12_PASSWORD }}
+        dev-id-app-cert:  ${{ secrets.BUILD_CERTIFICATES_BASE64 }}
+        dev-id-app-password: ${{ secrets.P12_PASSWORD }}   
+        
     - name: configure_macos
       if: matrix.os == 'macos-latest'
-      run: mkdir build && cd build && cmake -G Xcode .. "-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64"
+      run: mkdir build && cd build && cmake -G Xcode .. "-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64" "-DMAX_SDK_CODESIGN_EXTERNS=ON"
  
     - name: configure_windows
       if: matrix.os == 'windows-latest'
