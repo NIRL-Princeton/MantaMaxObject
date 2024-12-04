@@ -113,14 +113,14 @@ jobs:
       with:
         p12-file-base64: ${{ secrets.BUILD_CERTIFICATES_BASE64 }}
         p12-password: ${{ secrets.P12_PASSWORD }}
-   - name: Codesign (macOS)
+    - name: Codesign (macOS)
       working-directory: build
       if: ${{ matrix.name == 'macOS' }}
       run: |
         # Each plugin must be code signed
         codesign --force -s "${{ secrets.DEVELOPER_ID_APPLICATION}}" -v "build/" --deep --strict --options=runtime --timestamp
        # codesign --force -s "${{ secrets.DEVELOPER_ID_APPLICATION}}" -v "${{ env.AU_PATH }}" --deep --strict --options=runtime --timestamp
- - name: Create DMG, Notarize and Staple (macOS)
+    - name: Create DMG, Notarize and Staple (macOS)
       if: ${{ matrix.name == 'macOS' }}
       run: |
         npm install -g appdmg
