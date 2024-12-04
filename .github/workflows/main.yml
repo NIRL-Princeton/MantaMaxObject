@@ -48,7 +48,7 @@ jobs:
       
     - name: Import Certificates (macOS)
       uses: apple-actions/import-codesign-certs@v3 # only exists as a tag right now
-      if: ${{ matrix.name == 'macOS' }}
+      if: matrix.os == 'macos-latest'
       with:
         p12-file-base64: ${{ secrets.BUILD_CERTIFICATES_BASE64 }}
         p12-password: ${{ secrets.P12_PASSWORD }}
