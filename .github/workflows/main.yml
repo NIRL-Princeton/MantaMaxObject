@@ -41,7 +41,7 @@ jobs:
         
     - name: configure_macos
       if: matrix.os == 'macos-latest'
-      run: mkdir build && cd build && cmake -G Xcode .. "-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64" "-DMAX_SDK_CODESIGN_EXTERNS=ON"
+      run: mkdir build && cd build && cmake -G Xcode .. "-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64" 
  
     - name: configure_windows
       if: matrix.os == 'windows-latest'
