@@ -31,7 +31,7 @@ jobs:
         length: 7
 
     - name: Import Certificates (macOS)
-      uses: sudara/basic-macos-keychain-action@1.2.0
+      uses: sudara/basic-macos-keychain-action@main
       id: keychain
       with:
         dev-id-app-cert: ${{ secrets.DEV_ID_APP_CERT }}
