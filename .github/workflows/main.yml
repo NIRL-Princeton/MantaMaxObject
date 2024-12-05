@@ -103,6 +103,7 @@ jobs:
    
   release:
     runs-on: ubuntu-latest
+    permissions: write-all
     needs: package
 
     steps:
@@ -140,4 +141,4 @@ jobs:
       with:
         artifacts: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}.zip
         body: "Max Package for all supported platforms"
-  
+        token: ${{ secrets.GITHUB_TOKEN }}
