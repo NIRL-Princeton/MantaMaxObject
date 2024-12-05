@@ -68,7 +68,9 @@ jobs:
       run: |
         # Each plugin must be code signed
         ls
-        ls externals
+        ls build
+        ls mock 
+        ls source
         codesign --force -s "${{ secrets.DEVELOPER_ID_APPLICATION}}" -v "externals/min.manta.mxo" --deep --strict --options=runtime --timestamp
        # codesign --force -s "${{ secrets.DEVELOPER_ID_APPLICATION}}" -v "${{ env.AU_PATH }}" --deep --strict --options=runtime --timestamp
     # - name: Create DMG, Notarize and Staple (macOS)
