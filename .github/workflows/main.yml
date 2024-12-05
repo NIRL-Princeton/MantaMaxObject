@@ -61,7 +61,7 @@ jobs:
     #   run: cd build && ctest -C ${{ matrix.config }} . -V
 
   
-     - name: package_macos
+    - name: package_macos
       if: matrix.os == 'macos-latest'
       env:
         GITHUB_REPOSITORY: ${{ github.repository }}
