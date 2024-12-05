@@ -12,6 +12,8 @@
 #include <stdexcept>
 
 
+using namespace c74::min;
+
 struct MantaMultiListEntry {
 	MantaMultiListEntry();
 	~MantaMultiListEntry();
@@ -521,19 +523,19 @@ manta(const atoms& args = {})
 , OneIndexed(false)
 , pollTimerOn(0) {
 	// cout << "constructor called " << c74::min::endl;
-	padSymbol          = gensym("pad");
-	sliderSymbol       = gensym("slider");
-	sliderMaskSymbol   = gensym("slidermask");
-	buttonSymbol       = gensym("button");
-	amberSymbol        = gensym("amber");
-	offSymbol          = gensym("off");
-	redSymbol          = gensym("red");
-	rowSymbol          = gensym("row");
-	columnSymbol       = gensym("column");
-	frameSymbol        = gensym("frame");
-	ledframeSymbol     = gensym("ledframe");
-	padAndButtonSymbol = gensym("padandbutton");
-	ledsOffSymbol      = gensym("ledsoff");
+	padSymbol          = c74::max::gensym("pad");
+	sliderSymbol       = c74::max::gensym("slider");
+	sliderMaskSymbol   = c74::max::gensym("slidermask");
+	buttonSymbol       = c74::max::gensym("button");
+	amberSymbol        = c74::max::gensym("amber");
+	offSymbol          = c74::max::gensym("off");
+	redSymbol          = c74::max::gensym("red");
+	rowSymbol          = c74::max::gensym("row");
+	columnSymbol       = c74::max::gensym("column");
+	frameSymbol        = c74::max::gensym("frame");
+	ledframeSymbol     = c74::max::gensym("ledframe");
+	padAndButtonSymbol = c74::max::gensym("padandbutton");
+	ledsOffSymbol      = c74::max::gensym("ledsoff");
 	inputArg           = args[0];
 	errorHappened      = 0;
 	listOfMantaObjects.push_back(this);
