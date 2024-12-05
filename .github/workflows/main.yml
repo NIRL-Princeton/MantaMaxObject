@@ -61,17 +61,38 @@ jobs:
     # - name: test
     #   run: cd build && ctest -C ${{ matrix.config }} . -V
 
+    - name: package_macos
+      if: matrix.os == 'macos-latest'
+      env:
+        GITHUB_REPOSITORY: ${{ github.repository }}
+        GITHUB_SHA: ${{ github.sha }}
+        GITHUB_CONFIG: ${{ matrix.config }}
+      run: |
+        ls
+        PACKAGE_NAME=`echo $GITHUB_REPOSITORY | sed 's/.*\///g'`
+        PACKAGE_REV=`echo $GITHUB_SHA | sed -e 's/^[[:alnum:]]\{7\}/&-/g' | sed 's/-.*//'`
+        PACKAGE_CONFIG=`echo $GITHUB_CONFIG`
+        mkdir -p $PACKAGE_NAME
+        if [ -d code ]; then cp -r code $PACKAGE_NAME; fi
+        if [ -d docs ]; then cp -r docs $PACKAGE_NAME; fi
+        if [ -d examples ]; then cp -r examples $PACKAGE_NAME; fi
+        if [ -d extensions ]; then cp -r extensions $PACKAGE_NAME; fi
+        if [ -d externals ]; then cp -r externals $PACKAGE_NAME; fi
+        if [ -d extras ]; then cp -r extras $PACKAGE_NAME; fi
+        if [ -d help ]; then cp -r help $PACKAGE_NAME; fi
+        if [ -d patchers ]; then cp -r patchers $PACKAGE_NAME; fi
+        if [ -e $PACKAGE_NAME/ReadMe-Public.md ]; then rm -f $PACKAGE_NAME/ReadMe.md; mv $PACKAGE_NAME/ReadMe-Public.md $PACKAGE_NAME/ReadMe.md; fi
 
     - name: Codesign (macOS)
       working-directory: build
       if: matrix.os == 'macos-latest' 
       run: |
         # Each plugin must be code signed
-        ls
-        ls build
-        ls mock 
-        ls source
-        codesign --force -s "${{ secrets.DEVELOPER_ID_APPLICATION}}" -v "externals/min.manta.mxo" --deep --strict --options=runtime --timestamp
+        # ls
+        # ls build
+        # ls mock 
+        # ls source
+        
        # codesign --force -s "${{ secrets.DEVELOPER_ID_APPLICATION}}" -v "${{ env.AU_PATH }}" --deep --strict --options=runtime --timestamp
     # - name: Create DMG, Notarize and Staple (macOS)
     #   if: matrix.os == 'macos-latest' 
@@ -92,27 +113,7 @@ jobs:
     #     # #xcrun notarytool submit "${{ env.ARTIFACT_NAME }}.dmg" --apple-id ${{ secrets.NOTARIZATION_USERNAME }} --password ${{ secrets.NOTARIZATION_PASSWORD }} --team-id ${{ secrets.TEAM_ID }} --wait
     #     # #xcrun stapler staple "${{ env.ARTIFACT_NAME }}.dmg"
     
-    - name: package_macos
-      if: matrix.os == 'macos-latest'
-      env:
-        GITHUB_REPOSITORY: ${{ github.repository }}
-        GITHUB_SHA: ${{ github.sha }}
-        GITHUB_CONFIG: ${{ matrix.config }}
-      run: |
-        PACKAGE_NAME=`echo $GITHUB_REPOSITORY | sed 's/.*\///g'`
-        PACKAGE_REV=`echo $GITHUB_SHA | sed -e 's/^[[:alnum:]]\{7\}/&-/g' | sed 's/-.*//'`
-        PACKAGE_CONFIG=`echo $GITHUB_CONFIG`
-        mkdir -p $PACKAGE_NAME
-        if [ -d code ]; then cp -r code $PACKAGE_NAME; fi
-        if [ -d docs ]; then cp -r docs $PACKAGE_NAME; fi
-        if [ -d examples ]; then cp -r examples $PACKAGE_NAME; fi
-        if [ -d extensions ]; then cp -r extensions $PACKAGE_NAME; fi
-        if [ -d externals ]; then cp -r externals $PACKAGE_NAME; fi
-        if [ -d extras ]; then cp -r extras $PACKAGE_NAME; fi
-        if [ -d help ]; then cp -r help $PACKAGE_NAME; fi
-        if [ -d patchers ]; then cp -r patchers $PACKAGE_NAME; fi
-        if [ -e $PACKAGE_NAME/ReadMe-Public.md ]; then rm -f $PACKAGE_NAME/ReadMe.md; mv $PACKAGE_NAME/ReadMe-Public.md $PACKAGE_NAME/ReadMe.md; fi
-
+    
 
         
     - uses: actions/upload-artifact@v4
