@@ -58,10 +58,7 @@ jobs:
       if: matrix.os == 'macos-latest' 
       run: |
         # Each plugin must be code signed
-        # ls
-        # ls build
-        # ls mock 
-        # ls source
+   
         
         codesign --force -s "${{ secrets.DEVELOPER_ID_APPLICATION}}" -v "externals/min.manta.mxo" --deep --strict --options=runtime --timestamp
         codesign --force -s "${{ secrets.DEVELOPER_ID_APPLICATION}}" -v "help/min.manta.maxhelp" --deep --strict --options=runtime --timestamp
