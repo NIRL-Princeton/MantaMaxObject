@@ -53,7 +53,7 @@ jobs:
 
     - name: build_release
       if: matrix.config == 'release'
-      run: cmake -DMAX_SDK_CODESIGN_EXTERNS=1 --build build --config 'Release'
+      run: cmake --build build --config 'Release'
       
    
 
