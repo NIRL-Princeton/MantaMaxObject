@@ -31,6 +31,7 @@ jobs:
         length: 7
 
     - name: Import Certificates (macOS)
+      if: matrix.os == 'macos-latest' 
       uses: sudara/basic-macos-keychain-action@main
       id: keychain
       with:
@@ -91,13 +92,13 @@ jobs:
    
     - name: Codesign (macOS)
       working-directory: build
-      if: ${{ matrix.name == 'macOS' }}
+      if: matrix.os == 'macos-latest' 
       run: |
         # Each plugin must be code signed
         codesign --force -s "${{ secrets.DEVELOPER_ID_APPLICATION}}" -v "build/" --deep --strict --options=runtime --timestamp
        # codesign --force -s "${{ secrets.DEVELOPER_ID_APPLICATION}}" -v "${{ env.AU_PATH }}" --deep --strict --options=runtime --timestamp
     - name: Create DMG, Notarize and Staple (macOS)
-      if: ${{ matrix.name == 'macOS' }}
+      if: matrix.os == 'macos-latest' 
       run: |
         npm install -g appdmg
         mkdir -p packaging/dmg
