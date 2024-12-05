@@ -34,7 +34,7 @@ jobs:
       uses: sudara/basic-macos-keychain-action@1.2.0
       id: keychain
       with:
-        dev-id-app-cert:  ${{ secrets.BUILD_CERTIFICATES_BASE64 }}
+        dev-id-app-cert:  ${{ secrets.BUILD_CERTIFICATE_BASE64 }}
         dev-id-app-password: ${{ secrets.P12_PASSWORD }}   
         
     - name: configure_macos
