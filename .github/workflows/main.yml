@@ -46,7 +46,7 @@ jobs:
  
     - name: configure_windows
       if: matrix.os == 'windows-latest'
-      run: mkdir build && cd build && cmake ..
+      run: mkdir build && cd build && cmake "-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++" ..
 
     - name: build_release
       if: matrix.config == 'release'
