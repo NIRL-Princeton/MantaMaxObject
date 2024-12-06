@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: false 
       matrix:
-        os: [macos-latest]
+        os: [macos-latest, windows-latest]
         config: [release]
 
     steps:
@@ -26,6 +26,9 @@ jobs:
       id: short-sha
       with:
         length: 7
+    
+     # Setup MSVC toolchain and developer command prompt (Windows) to fix std::clamp issue?
+    - uses: ilammy/msvc-dev-cmd@v1
 
     - name: Import Certificates (macOS)
       if: matrix.os == 'macos-latest' 
@@ -41,11 +44,27 @@ jobs:
       if: matrix.os == 'macos-latest'
       run: mkdir build && cd build && cmake -G Xcode .. "-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64" 
  
+    - name: configure_windows
+      if: matrix.os == 'windows-latest'
+      run: mkdir build && cd build && cmake ..
 
     - name: build_release
       if: matrix.config == 'release'
       run: cmake --build build --config 'Release'
-      
+
+    - name: package_windows
+      if: matrix.os == 'windows-latest'
+      shell: cmd
+      env:
+        GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
+        GITHUB_CONFIG: ${{ matrix.config }}
+      run: |
+        set PACKAGE_NAME=%GITHUB_REPOSITORY_NAME%
+        mkdir %PACKAGE_NAME%
+        if exist extensions cp -r extensions %PACKAGE_NAME%
+        if exist externals cp -r externals %PACKAGE_NAME%
+        if exist support cp -r support %PACKAGE_NAME%
+        if exist tests cp -r tests %PACKAGE_NAME%
    
 
     # - name: test
