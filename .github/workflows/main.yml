@@ -40,12 +40,13 @@ jobs:
         # dev-id-installer-cert: ${{ secrets.DEV_ID_INSTALLER_CERT }
         # dev-id-installer-password: ${{ secrets.DEV_ID_INSTALLER_PASS }}}   
     - name: add msbuild to path
+      if: matrix.os == 'windows-latest'
       uses: microsoft/setup-msbuild@v2
       with:
-        vs-version: '[14.31]'
+        vs-version: '[17.1]'
     - name: configure_macos
       if: matrix.os == 'macos-latest'
-      run: mkdir build && cd build && cmake -T version=14.31 -G Xcode .. "-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64" 
+      run: mkdir build && cd build && cmake -T version=17.1 -G Xcode .. "-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64" 
  
     - name: configure_windows
       if: matrix.os == 'windows-latest'
@@ -53,7 +54,7 @@ jobs:
 
     - name: build_release
       if: matrix.config == 'release'
-      run: cmake --build build -T version=14.31 --config 'Release'
+      run: cmake --build build -T version=17.1 --config 'Release'
 
     - name: package_windows
       if: matrix.os == 'windows-latest'
