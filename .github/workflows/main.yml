@@ -27,14 +27,8 @@ jobs:
       with:
         length: 7
     
-     # Setup MSVC toolchain and developer command prompt (Windows) to fix std::clamp issue?
-    - uses: ilammy/msvc-dev-cmd@v1
-    
-    - name: Setup MSVC
-      uses: microsoft/setup-msvc@v1
-      with:
-        toolset: 14.28
-        arch: x64
+
+  
 
     - name: Import Certificates (macOS)
       if: matrix.os == 'macos-latest' 
