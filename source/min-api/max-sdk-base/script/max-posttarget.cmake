@@ -1,6 +1,6 @@
 # Copyright 2018 The Max-API Authors. All rights reserved.
 # Use of this source code is governed by the MIT License found in the License.md file.
-
+message(STATUS ${C74_CXX_STANDARD}  )
 if (${C74_CXX_STANDARD} EQUAL 98)
 	if (APPLE)
 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++98 -stdlib=libstdc++")
@@ -8,6 +8,7 @@ if (${C74_CXX_STANDARD} EQUAL 98)
 		set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -stdlib=libstdc++")
 	endif ()
 else ()
+    message(STATUS " WINDOWS CXX STANDARD IS C17")
 	set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
 	set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 endif ()
