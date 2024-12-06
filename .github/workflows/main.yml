@@ -37,7 +37,7 @@ jobs:
       with:
         dev-id-app-cert: ${{ secrets.DEV_ID_APP_CERT }}
         dev-id-app-password: ${{ secrets.DEV_ID_APP_PASSWORD }}
-        # dev-id-installer-cert: ${{ secrets.DEV_ID_INSTALLER_CERT }}
+        # dev-id-installer-cert: ${{ secrets.DEV_ID_INSTALLER_CERT }
         # dev-id-installer-password: ${{ secrets.DEV_ID_INSTALLER_PASS }}}   
         
     - name: configure_macos
@@ -46,7 +46,7 @@ jobs:
  
     - name: configure_windows
       if: matrix.os == 'windows-latest'
-      run: mkdir build && cd build && cmake -G "Visual Studio 17 2022" "-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++" ..
+      run: mkdir build && cd build && cmake -G ..
 
     - name: build_release
       if: matrix.config == 'release'
