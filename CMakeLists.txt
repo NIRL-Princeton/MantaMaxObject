@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.19)
+cmake_minimum_required(VERSION 3.3)
 set(C74_BUILD_FAT 1)
 project(Min-DevKit)
 
