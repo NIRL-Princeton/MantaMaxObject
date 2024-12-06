@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.19)
 set(C74_BUILD_FAT 1)
 project(Min-DevKit)
-
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON) # Ensure the compiler supports C++17
 enable_testing()
 
 string(REGEX REPLACE "(.*)/" "" THIS_PACKAGE_NAME "${CMAKE_CURRENT_SOURCE_DIR}")
