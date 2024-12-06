@@ -46,8 +46,7 @@ jobs:
     - name: add msbuild to path
       if: matrix.os == 'windows-latest'
       uses: microsoft/setup-msbuild@v2
-      with:
-        vs-version: '[17.1]'
+     
     - name: configure_macos
       if: matrix.os == 'macos-latest'
       run: mkdir build && cd build && cmake -G Xcode .. "-DCMAKE_OSX_ARCHITECTURES=x86_64;arm64" 
