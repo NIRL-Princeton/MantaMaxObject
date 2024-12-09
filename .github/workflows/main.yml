@@ -214,7 +214,7 @@ jobs:
     - name: test
       run: |
         ls
-        cd MantaMaxObject-package-for-max-v0.0.38-mac.zip
+        cd MantaMaxObject-package-for-max-v0.0.40-mac.zip
         ls
     - uses: ncipollo/release-action@v1
       with:
