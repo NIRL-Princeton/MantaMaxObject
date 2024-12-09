@@ -15,6 +15,11 @@ jobs:
       matrix:
         os: [macos-latest, windows-latest]
         config: [release]
+        include:
+          - os: macos-latest
+            release_suffix: mac
+          - os: windows-latest
+            release_suffix: windows
 
     steps:
     - uses: actions/checkout@v4
@@ -63,7 +68,7 @@ jobs:
       if: matrix.os == 'windows-latest'
       shell: cmd
       env:
-        GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}
+        GITHUB_REPOSITORY_NAME: ${{ github.event.repository.name }}/${{matrix.release_suffix}}
         GITHUB_CONFIG: ${{ matrix.config }}
       run: |
         set PACKAGE_NAME=%GITHUB_REPOSITORY_NAME%
@@ -87,7 +92,7 @@ jobs:
     - name: package_macos
       if: matrix.os == 'macos-latest'
       env:
-        GITHUB_REPOSITORY: ${{ github.repository }}
+        GITHUB_REPOSITORY: ${{ github.repository }}/${{matrix.release_suffix}}
         GITHUB_SHA: ${{ github.sha }}
         GITHUB_CONFIG: ${{ matrix.config }}
       run: |
@@ -122,10 +127,16 @@ jobs:
     
 
         
-    - uses: actions/upload-artifact@v4
+    - name: upload mac
+      uses: actions/upload-artifact@v4
       with:
-        name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-${{ matrix.config }}-${{matrix.os}}
-        path: ${{ github.event.repository.name }}
+        name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-${{ matrix.config }}-${{matrix.release_suffix}}
+        path: ${{ github.event.repository.name }}/${{matrix.release_suffix}}
+    - name: upload windows
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-${{ matrix.config }}-${{matrix.release_suffix}}
+        path: ${{ github.event.repository.name }}/${{matrix.release_suffix}}
    
   release:
     runs-on: ubuntu-latest
@@ -136,6 +147,11 @@ jobs:
       matrix:
         os: [macos-latest, windows-latest]
         config: [release]
+        include:
+          - os: macos-latest
+            release_suffix: mac
+          - os: windows-latest
+            release_suffix: windows
 
     steps:
     - uses: actions/checkout@v3
@@ -153,15 +169,15 @@ jobs:
 
     - uses: actions/download-artifact@v4
       with:
-        name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-release-${{matrix.os}}
-        path: ${{ github.event.repository.name }}
+        name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-release-${{matrix.release_suffix}}
+        path: ${{ github.event.repository.name }}/${{matrix.release_suffix}}
     
     - name: Display structure of downloaded files
       run: ls -R
       working-directory: ${{ github.event.repository.name }}
 
     - name: zip
-      run: zip -r ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}.zip ${{ github.event.repository.name }}
+      run: zip -r ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}.zip ${{ github.event.repository.name }}/${{matrix.release_suffix}}
 
     - uses: actions/upload-artifact@v4
       with:
