@@ -217,6 +217,6 @@ jobs:
         ls
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: "${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-mac.zip/${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-windows.zip"
+        artifacts: "${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-windows.zip/${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-windows.zip, ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-mac.zip/${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-mac.zip"
         body: "Max Package for all supported platforms"
         token: ${{ secrets.GITHUB_TOKEN }}
