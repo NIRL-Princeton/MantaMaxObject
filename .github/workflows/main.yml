@@ -74,7 +74,7 @@ jobs:
       run: |
         set PACKAGE_NAME=%GITHUB_REPOSITORY_NAME%
         mkdir %PACKAGE_NAME%
-        mdkir %PACKAGE_NAME%/%SUFFIX%
+        mkdir %PACKAGE_NAME%/%SUFFIX%
         if exist extensions cp -r extensions %PACKAGE_NAME%/$SUFFIX
         if exist externals cp -r externals %PACKAGE_NAME%/$SUFFIX
         if exist support cp -r support %PACKAGE_NAME%/$SUFFIX
