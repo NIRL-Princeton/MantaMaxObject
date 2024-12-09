@@ -103,7 +103,7 @@ jobs:
         PACKAGE_REV=`echo $GITHUB_SHA | sed -e 's/^[[:alnum:]]\{7\}/&-/g' | sed 's/-.*//'`
         PACKAGE_CONFIG=`echo $GITHUB_CONFIG`
         mkdir -p $PACKAGE_NAME_$SUFFIX
-       
+         ls
         if [ -d externals ]; then cp -r externals $PACKAGE_NAME_$SUFFIX; fi
         if [ -d help ]; then cp -r help $PACKAGE_NAME_$SUFFIX; fi
         if [ -e $PACKAGE_NAME/ReadMe-Public.md ]; then rm -f $PACKAGE_NAME_$SUFFIX/ReadMe.md; mv $PACKAGE_NAME_$SUFFIX/ReadMe-Public.md $PACKAGE_NAME_$SUFFIX/ReadMe.md; fi
