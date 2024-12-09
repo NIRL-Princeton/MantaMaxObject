@@ -136,12 +136,7 @@ jobs:
       with:
         name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-${{ matrix.config }}-${{matrix.release_suffix}}
         path: ${{ github.event.repository.name }}/${{matrix.release_suffix}}
-    - name: upload windows
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-${{ matrix.config }}-${{matrix.release_suffix}}
-        path: ${{ github.event.repository.name }}/${{matrix.release_suffix}}
-   
+    
   release:
     runs-on: ubuntu-latest
     permissions: write-all
