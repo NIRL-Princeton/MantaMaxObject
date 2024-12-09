@@ -27,7 +27,7 @@ jobs:
       with:
         length: 7
   
-    - uses: GuillaumeFalourd/setup-windows10-sdk-action@v2    
+    # - uses: GuillaumeFalourd/setup-windows10-sdk-action@v2    
 
   
 
@@ -124,7 +124,7 @@ jobs:
         
     - uses: actions/upload-artifact@v4
       with:
-        name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-${{ matrix.config }}
+        name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-${{ matrix.config }}-${{matrix.os}}
         path: ${{ github.event.repository.name }}
    
   release:
