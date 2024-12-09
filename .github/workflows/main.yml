@@ -131,7 +131,7 @@ jobs:
     
 
         
-    - name: upload mac
+    - name: upload 
       uses: actions/upload-artifact@v4
       with:
         name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-${{ matrix.config }}-${{matrix.release_suffix}}
