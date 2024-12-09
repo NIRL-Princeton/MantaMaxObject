@@ -94,7 +94,7 @@ jobs:
     - name: package_macos
       if: matrix.os == 'macos-latest'
       env:
-        GITHUB_REPOSITORY: ${{ github.repository }}/${{matrix.release_suffix}}
+        GITHUB_REPOSITORY: ${{ github.repository }}
         GITHUB_SHA: ${{ github.sha }}
         SUFFIX: ${{matrix.release_suffix}}
         GITHUB_CONFIG: ${{ matrix.config }}
@@ -173,7 +173,7 @@ jobs:
     
     - name: Display structure of downloaded files
       run: ls -R
-      working-directory: ${{ github.event.repository.name }}
+      working-directory: ${{ github.event.repository.name }}_${{matrix.release_suffix}}
 
     - name: zip
       run: zip -r ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-${{matrix.release_suffix}}.zip ${{ github.event.repository.name }}_${{matrix.release_suffix}}
