@@ -137,7 +137,7 @@ jobs:
         name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-${{ matrix.config }}-${{matrix.release_suffix}}
         path: ${{ github.event.repository.name }}_${{matrix.release_suffix}}
     
-  release:
+  zip:
     runs-on: ubuntu-latest
     permissions: write-all
     needs: package
@@ -182,9 +182,25 @@ jobs:
       with:
         name: ${{ github.event.repository.name }}-${{ steps.get_version.outputs.version }}-zipped-release-${{matrix.release_suffix}}
         path: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-${{matrix.release_suffix}}.zip
+  release:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    needs: zip
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: 'recursive'
+        fetch-depth: '0'
+        
+    - uses: battila7/get-version-action@v2
+      id: get_version
 
+    - uses: benjlevesque/short-sha@v1.2
+      id: short-sha
+      with:
+        length: 7
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-${{matrix.release_suffix}}.zip
+        artifacts: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-windows.zip
         body: "Max Package for all supported platforms"
         token: ${{ secrets.GITHUB_TOKEN }}
