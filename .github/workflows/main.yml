@@ -73,8 +73,8 @@ jobs:
         GITHUB_CONFIG: ${{ matrix.config }}
       run: |
         set PACKAGE_NAME=%GITHUB_REPOSITORY_NAME%
-        mkdir %PACKAGE_NAME%
-        mkdir %PACKAGE_NAME%/%SUFFIX%
+        mkdir %PACKAGE_NAME%_%SUFFIX%
+       
         if exist extensions cp -r extensions %PACKAGE_NAME%/$SUFFIX
         if exist externals cp -r externals %PACKAGE_NAME%/$SUFFIX
         if exist support cp -r support %PACKAGE_NAME%/$SUFFIX
@@ -102,11 +102,11 @@ jobs:
         PACKAGE_NAME=`echo $GITHUB_REPOSITORY | sed 's/.*\///g'`
         PACKAGE_REV=`echo $GITHUB_SHA | sed -e 's/^[[:alnum:]]\{7\}/&-/g' | sed 's/-.*//'`
         PACKAGE_CONFIG=`echo $GITHUB_CONFIG`
-        mkdir -p $PACKAGE_NAME
-        mkdir -p $PACKAGE_NAME/$SUFFIX
-        if [ -d externals ]; then cp -r externals $PACKAGE_NAME/$SUFFIX; fi
-        if [ -d help ]; then cp -r help $PACKAGE_NAME/$SUFFIX; fi
-        if [ -e $PACKAGE_NAME/ReadMe-Public.md ]; then rm -f $PACKAGE_NAME/$SUFFIX/ReadMe.md; mv $PACKAGE_NAME/$SUFFIX/ReadMe-Public.md $PACKAGE_NAME/$SUFFIX/ReadMe.md; fi
+        mkdir -p $PACKAGE_NAME_$SUFFIX
+       
+        if [ -d externals ]; then cp -r externals $PACKAGE_NAME_$SUFFIX; fi
+        if [ -d help ]; then cp -r help $PACKAGE_NAME_$SUFFIX; fi
+        if [ -e $PACKAGE_NAME/ReadMe-Public.md ]; then rm -f $PACKAGE_NAME_$SUFFIX/ReadMe.md; mv $PACKAGE_NAME_$SUFFIX/ReadMe-Public.md $PACKAGE_NAME_$SUFFIX/ReadMe.md; fi
 
    
     # - name: Create DMG, Notarize and Staple (macOS)
@@ -135,7 +135,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-${{ matrix.config }}-${{matrix.release_suffix}}
-        path: ${{ github.event.repository.name }}/${{matrix.release_suffix}}
+        path: ${{ github.event.repository.name }}_${{matrix.release_suffix}}
     
   release:
     runs-on: ubuntu-latest
@@ -169,22 +169,22 @@ jobs:
     - uses: actions/download-artifact@v4
       with:
         name: ${{ github.event.repository.name }}-${{ steps.short-sha.outputs.sha }}-release-${{matrix.release_suffix}}
-        path: ${{ github.event.repository.name }}/${{matrix.release_suffix}}
+        path: ${{ github.event.repository.name }}_${{matrix.release_suffix}}
     
     - name: Display structure of downloaded files
       run: ls -R
       working-directory: ${{ github.event.repository.name }}
 
     - name: zip
-      run: zip -r ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}.zip ${{ github.event.repository.name }}/${{matrix.release_suffix}}
+      run: zip -r ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-${{matrix.release_suffix}}.zip ${{ github.event.repository.name }}_${{matrix.release_suffix}}
 
     - uses: actions/upload-artifact@v4
       with:
-        name: ${{ github.event.repository.name }}-${{ steps.get_version.outputs.version }}-zipped-release
-        path: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}.zip
+        name: ${{ github.event.repository.name }}-${{ steps.get_version.outputs.version }}-zipped-release-${{matrix.release_suffix}}
+        path: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-${{matrix.release_suffix}}.zip
 
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}.zip
+        artifacts: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-${{matrix.release_suffix}}.zip
         body: "Max Package for all supported platforms"
         token: ${{ secrets.GITHUB_TOKEN }}
