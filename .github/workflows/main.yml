@@ -199,8 +199,20 @@ jobs:
       id: short-sha
       with:
         length: 7
+
+    - name: download mac
+      uses: actions/download-artifact@v4
+      with:
+        name: ${{ github.event.repository.name }}-${{ steps.get_version.outputs.version }}-zipped-release-mac
+        path: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-mac.zip
+
+    - name: download windows
+      uses: actions/download-artifact@v4
+      with:
+        name: ${{ github.event.repository.name }}-${{ steps.get_version.outputs.version }}-zipped-release-windows
+        path: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-windows.zip
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-windows.zip
+        artifacts: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-windows.zip ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-windows.zip
         body: "Max Package for all supported platforms"
         token: ${{ secrets.GITHUB_TOKEN }}
