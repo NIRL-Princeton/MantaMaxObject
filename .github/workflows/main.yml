@@ -213,11 +213,10 @@ jobs:
         path: ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-windows.zip
     - name: test
       run: |
-        ls
-        cd MantaMaxObject-package-for-max-v0.0.40-mac.zip
+        cd MantaMaxObject-package-for-max-v0.0.41-mac.zip
         ls
     - uses: ncipollo/release-action@v1
       with:
-        artifacts: "${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-mac.zip/${{ github.event.repository.name }}-${{ steps.get_version.outputs.version }}-zipped-release-mac, ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-windows.zip/${{ github.event.repository.name }}-${{ steps.get_version.outputs.version }}-zipped-release-windows"
+        artifacts: "${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-mac.zip/${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-windows.zip"
         body: "Max Package for all supported platforms"
         token: ${{ secrets.GITHUB_TOKEN }}
