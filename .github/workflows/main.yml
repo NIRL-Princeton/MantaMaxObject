@@ -102,7 +102,7 @@ jobs:
         PACKAGE_NAME=`echo $GITHUB_REPOSITORY | sed 's/.*\///g'`
         PACKAGE_REV=`echo $GITHUB_SHA | sed -e 's/^[[:alnum:]]\{7\}/&-/g' | sed 's/-.*//'`
         PACKAGE_CONFIG=`echo $GITHUB_CONFIG`
-        mkdir -p $PACKAGE_NAME_$SUFFIX
+        mkdir -p ${PACKAGE_NAME}_${SUFFIX}
          ls
         if [ -d externals ]; then cp -r externals $PACKAGE_NAME_$SUFFIX; fi
         if [ -d help ]; then cp -r help $PACKAGE_NAME_$SUFFIX; fi
