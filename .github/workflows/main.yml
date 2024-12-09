@@ -75,10 +75,10 @@ jobs:
         set PACKAGE_NAME=%GITHUB_REPOSITORY_NAME%
         mkdir %PACKAGE_NAME%_%SUFFIX%
        
-        if exist extensions cp -r extensions %PACKAGE_NAME%/$SUFFIX
-        if exist externals cp -r externals %PACKAGE_NAME%/$SUFFIX
-        if exist support cp -r support %PACKAGE_NAME%/$SUFFIX
-        if exist tests cp -r tests %PACKAGE_NAME%/$SUFFIX
+        if exist extensions cp -r extensions %PACKAGE_NAME%_%SUFFIX%
+        if exist externals cp -r externals %PACKAGE_NAME%_%SUFFIX%
+        if exist support cp -r support %PACKAGE_NAME%_%SUFFIX%
+        if exist tests cp -r tests %PACKAGE_NAME%_%SUFFIX%
    
 
     # - name: test
