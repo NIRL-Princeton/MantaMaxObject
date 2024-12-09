@@ -214,6 +214,8 @@ jobs:
     - name: test
       run: |
         ls
+        cd MantaMaxObject-package-for-max-v0.0.38-mac.zip
+        ls
     - uses: ncipollo/release-action@v1
       with:
         artifacts: "${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-mac.zip/${{ github.event.repository.name }}-${{ steps.get_version.outputs.version }}-zipped-release-mac, ${{ github.event.repository.name }}-package-for-max-${{ steps.get_version.outputs.version }}-windows.zip/${{ github.event.repository.name }}-${{ steps.get_version.outputs.version }}-zipped-release-windows"
