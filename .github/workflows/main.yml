@@ -74,10 +74,11 @@ jobs:
       run: |
         set PACKAGE_NAME=%GITHUB_REPOSITORY_NAME%
         mkdir %PACKAGE_NAME%
-        if exist extensions cp -r extensions %PACKAGE_NAME%
-        if exist externals cp -r externals %PACKAGE_NAME%
-        if exist support cp -r support %PACKAGE_NAME%
-        if exist tests cp -r tests %PACKAGE_NAME%
+        mdkir %PACKAGE_NAME%/$SUFFIX
+        if exist extensions cp -r extensions %PACKAGE_NAME%/$SUFFIX
+        if exist externals cp -r externals %PACKAGE_NAME%/$SUFFIX
+        if exist support cp -r support %PACKAGE_NAME%/$SUFFIX
+        if exist tests cp -r tests %PACKAGE_NAME%/$SUFFIX
    
 
     # - name: test
@@ -101,10 +102,11 @@ jobs:
         PACKAGE_NAME=`echo $GITHUB_REPOSITORY | sed 's/.*\///g'`
         PACKAGE_REV=`echo $GITHUB_SHA | sed -e 's/^[[:alnum:]]\{7\}/&-/g' | sed 's/-.*//'`
         PACKAGE_CONFIG=`echo $GITHUB_CONFIG`
+        mkdir -p $PACKAGE_NAME
         mkdir -p $PACKAGE_NAME/$SUFFIX
-        if [ -d externals ]; then cp -r externals $PACKAGE_NAME; fi
-        if [ -d help ]; then cp -r help $PACKAGE_NAME; fi
-        if [ -e $PACKAGE_NAME/ReadMe-Public.md ]; then rm -f $PACKAGE_NAME/ReadMe.md; mv $PACKAGE_NAME/ReadMe-Public.md $PACKAGE_NAME/ReadMe.md; fi
+        if [ -d externals ]; then cp -r externals $PACKAGE_NAME/$SUFFIX; fi
+        if [ -d help ]; then cp -r help $PACKAGE_NAME/$SUFFIX; fi
+        if [ -e $PACKAGE_NAME/ReadMe-Public.md ]; then rm -f $PACKAGE_NAME/$SUFFIX/ReadMe.md; mv $PACKAGE_NAME/$SUFFIX/ReadMe-Public.md $PACKAGE_NAME/$SUFFIX/ReadMe.md; fi
 
    
     # - name: Create DMG, Notarize and Staple (macOS)
